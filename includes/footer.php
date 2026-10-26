@@ -30,12 +30,12 @@
             </div>
 
             <div class="col-lg-3 col-md-3 col-6">
-                <h6 class="text-white fw-bold mb-3">Kategori Spot</h6>
-                <a href="daftar-wisata.php?kategori=1" class="footer-link">Tebing Karang & Panorama</a>
-                <a href="daftar-wisata.php?kategori=2" class="footer-link">Pantai Pasir Putih</a>
+                <h6 class="text-white fw-bold mb-3">Zona & Kategori</h6>
+                <a href="daftar-wisata.php?kategori=1" class="footer-link">Jumiang Atas (Tebing)</a>
+                <a href="daftar-wisata.php?kategori=2" class="footer-link">Jumiang Bawah (Pantai)</a>
                 <a href="daftar-wisata.php?kategori=3" class="footer-link">Hutan Cemara Udang</a>
-                <a href="daftar-wisata.php?kategori=4" class="footer-link">Spot Foto & Sunset</a>
-                <a href="daftar-wisata.php?kategori=5" class="footer-link">Kuliner Khas Madura</a>
+                <a href="daftar-wisata.php?kategori=4" class="footer-link">Wahana Air & Spot Foto</a>
+                <a href="daftar-wisata.php?kategori=5" class="footer-link">Warung Rujak & Fasilitas</a>
             </div>
 
             <div class="col-lg-3 col-md-12">

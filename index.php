@@ -36,7 +36,7 @@ include __DIR__ . '/includes/header.php';
         </span>
         <h1 class="hero-title">Wisata Madura: Pantai Jumiang Pamekasan</h1>
         <p class="hero-subtitle">
-            Sistem Informasi Geografis pemetaan spasial interaktif objek wisata, panorama tebing karang, hamparan pasir putih, hutan cemara udang, kuliner rujak petis Madura, serta fasilitas terpadu kawasan Pantai Jumiang.
+            Sistem Informasi Geografis pemetaan spasial dua zona utama: <strong>Jumiang Atas</strong> (tebing karang kokoh, gardu pandang sunset & sunrise, ayunan tebing) dan <strong>Jumiang Bawah</strong> (pantai pasir putih landai, perahu nelayan tradisional Madura, banana boat, hutan cemara udang, & warung rujak petis).
         </p>
         <div class="d-flex justify-content-center gap-3 flex-wrap">
             <a href="#sectionPeta" class="btn btn-primary rounded-pill px-4 py-2 fw-semibold shadow">

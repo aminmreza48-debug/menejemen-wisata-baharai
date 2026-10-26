@@ -180,85 +180,81 @@ class Database {
 
         // Seed Kategori Khusus Kawasan Pantai Jumiang
         $pdo->exec("INSERT INTO kategori_wisata (id_kategori, nama_kategori, deskripsi) VALUES
-            (1, 'Spot Panorama & Tebing Karang', 'Daya tarik utama tebing batu karang laut, bukit pemandangan, dan pesisir alami.'),
-            (2, 'Pantai Pasir Putih & Pesisir', 'Hamparan pesisir pasir putih untuk rekreasi air, berenang santai, dan pesona teluk.'),
-            (3, 'Hutan Cemara & Area Teduh', 'Kawasan pepohonan cemara udang pesisir yang rimbun, sejuk, dan asri khas pesisir Madura.'),
-            (4, 'Wahana, Spot Foto & Sunset', 'Gardu pandang matahari terbenam, ayunan laut, dek foto instagramable, dan camping ground.'),
-            (5, 'Kuliner Khas & Fasilitas Wisata', 'Sentra kuliner rujak petis & ikan bakar, area parkir, loket retribusi, musholla & kamar bilas.');");
+            (1, 'Jumiang Atas (Tebing & Panorama)', 'Kawasan atas bukit dan tebing batu karang terjal dengan balkon alami menghadap Selat Madura.'),
+            (2, 'Jumiang Bawah (Pantai & Pesisir)', 'Area pesisir pantai landai berpasir putih, air jernih ombak tenang, dan pangkalan perahu.'),
+            (3, 'Hutan Cemara & Jalur Teduh', 'Kawasan rindang ribuan pohon cemara udang pesisir yang sejuk untuk bersantai dan piknik.'),
+            (4, 'Wahana Air & Spot Swafoto', 'Wahana rekreasi perahu, banana boat, ayunan tebing, dan spot selfie sunrise/sunset.'),
+            (5, 'Kuliner Tradisional & Fasilitas', 'Sentra warung rujak petis Madura, es kelapa muda, pos retribusi, mushola, dan bilas.');");
 
         // Seed Fasilitas
         $pdo->exec("INSERT INTO fasilitas (id_fasilitas, nama_fasilitas, deskripsi) VALUES
-            (1, 'Gazebo & Saung Santai Tepi Tebing', 'Saung istirahat kayu kelapa dengan hembusan angin laut dan pemandangan ombak tebing.'),
-            (2, 'Gardu Pandang Panorama Sunset & Selat Madura', 'Deck elevasi tinggi untuk menikmati pemandangan 360 derajat laut lepas dan matahari terbenam.'),
-            (3, 'Toilet Bersih & Kamar Bilas Air Tawar', 'Kamar bilas air tawar bersih setelah bermain air laut dan fasilitas sanitasi terawat.'),
-            (4, 'Musholla Al-Bahri', 'Tempat ibadah nyaman dan bersih yang berlokasi strategis di dalam area wisata.'),
-            (5, 'Sentra Kuliner Rujak Petis & Ikan Bakar Madura', 'Deretan warung makanan khas Pamekasan dengan menu rujak petis Madura dan ikan laut segar.'),
-            (6, 'Sewa Perahu Wisata Tradisional', 'Layanan jelajah tanjung tebing karang dengan perahu bercorak khas nelayan Madura.'),
-            (7, 'Area Parkir Luas (Motor, Mobil, Bus)', 'Lahan parkir tertata aman yang dijaga petugas parkir resmi Pokdarwis.'),
-            (8, 'Spot Foto Instagramable & Ayunan Laut', 'Instalasi foto kekinian berupa ayunan di bibir tebing dan frame kapal menghadap laut.'),
-            (9, 'Area Camping Ground & Api Unggun', 'Padang rumput datar di atas bukit pesisir untuk perkemahan ceria dan memandang bintang.'),
-            (10, 'Pos Informasi Pokdarwis & Keamanan Pantai', 'Pusat layanan informasi pengunjung dan pos pengawas keselamatan perairan.');");
+            (1, 'Gazebo & Saung Bambu Tebing', 'Deretan saung kayu/bambu di tepi tebing karang untuk berteduh menikmati hembusan angin laut.'),
+            (2, 'Gardu Pandang Sunset & Sunrise', 'Balkon alami di atas tebing karang tinggi menghadap panorama 360 derajat laut Selat Madura.'),
+            (3, 'Kamar Mandi Bilas Air Tawar', 'Fasilitas kamar bilas air tawar dan toilet umum setelah bermain air di pantai.'),
+            (4, 'Mushola Wisata', 'Mushola sederhana yang bersih dan nyaman untuk ibadah pengunjung.'),
+            (5, 'Warung Rujak Petis & Es Kelapa Muda', 'Deretan warung kuliner tradisional khas pesisir Madura dengan harga ramah di kantong.'),
+            (6, 'Sewa Perahu Tradisional Nelayan', 'Perahu jukung bermesin khas Madura untuk berkeliling tanjung tebing karang dari arah laut.'),
+            (7, 'Area Parkir Motor & Mobil', 'Lahan parkir aman di bawah pohon rindang yang dikelola warga lokal & Pokdarwis.'),
+            (8, 'Spot Ayunan Kayu & Dekorasi Foto', 'Instalasi ayunan kayu di bibir tebing menghadap laut bebas untuk berswafoto.'),
+            (9, 'Wahana Banana Boat & Sewa Ban', 'Wahana permainan air banana boat keliling teluk dan penyewaan ban pelampung renang.'),
+            (10, 'Pos Tiket Masuk & Informasi Pokdarwis', 'Pintu retribusi tiket masuk resmi yang dikelola Pokdarwis Desa Tanjung, Pademawu.');");
 
         // Seed Wisata Kawasan Pantai Jumiang
         $pdo->exec("INSERT INTO wisata (id_wisata, id_kategori, nama_wisata, deskripsi, alamat, latitude, longitude, harga_tiket, jam_operasional, status, id_user) VALUES
-            (1, 1, 'Tebing Karang Utama Pantai Jumiang', 'Tebing batu karang terjal setinggi 15 meter yang menjorok langsung ke deburan ombak Selat Madura. Menjadi ikon legendaris Pantai Jumiang Pamekasan dengan pemandangan batuan karang eksotis, panorama laut lepas membiru, dan angin sepoi-sepoi khas pesisir Madura.', 'Semenanjung Tebing Karang Jumiang, Dusun Jumiang, Desa Tanjung, Kec. Pademawu, Kab. Pamekasan, Madura, Jawa Timur 69381', -7.2341200, 113.5501500, 10000.00, '06:00 - 18:00 WIB', 'aktif', 1),
-            (2, 2, 'Pantai Pasir Putih Teluk Jumiang', 'Area teluk pesisir landai berpasir putih alami di sisi timur tebing karang Jumiang. Memiliki ombak yang tenang dan air laut yang jernih, sangat aman untuk rekreasi keluarga, anak-anak bermain pasir pantai, dan berendam air laut.', 'Kawasan Dataran Rendah Teluk Jumiang, Desa Tanjung, Kec. Pademawu, Kab. Pamekasan, Madura, Jawa Timur', -7.2325800, 113.5512000, 10000.00, '06:00 - 17:30 WIB', 'aktif', 1),
-            (3, 4, 'Gardu Pandang & Puncak Bukit Sunset Jumiang', 'Titik elevasi tertinggi di atas bukit karang Jumiang yang dilengkapi anjungan balkon kayu dan deretan bangku pandang. Menjadi lokasi terfavorit di Pamekasan Madura untuk menyaksikan indahnya matahari terbit (sunrise) dan matahari terbenam (sunset) dengan latar siluet Selat Madura.', 'Puncak Bukit Karang Jumiang, Desa Tanjung, Kec. Pademawu, Kab. Pamekasan, Madura, Jawa Timur', -7.2338500, 113.5489000, 0.00, '06:00 - 18:30 WIB', 'aktif', 1),
-            (4, 3, 'Hutan Cemara Udang Pesisir Jumiang', 'Kawasan rindang ribuan pohon cemara udang khas pesisir Madura yang membentang asri di sepanjang daratan Pantai Jumiang. Menghadirkan keteduhan alami, udara sejuk, serta spot bersantai menggelar tikar piknik keluarga di bawah naungan pohon.', 'Jalur Hijau Cemara Udang, Dusun Jumiang, Desa Tanjung, Kec. Pademawu, Kab. Pamekasan, Madura', -7.2319000, 113.5482000, 0.00, '06:00 - 18:00 WIB', 'aktif', 1),
-            (5, 4, 'Spot Ayunan Laut & Deck Selfie Bahari', 'Wahana foto instagramable yang didesain di tepi bibir bukit karang dengan ayunan kayu ikonik dan anjungan dermaga miniatur kapal menghadap langsung ke lautan luas. Spot wajib bagi para pemburu foto estetik saat berkunjung ke Pantai Jumiang.', 'Bibir Tebing Karang Jumiang, Desa Tanjung, Kec. Pademawu, Kab. Pamekasan, Madura', -7.2348000, 113.5496000, 5000.00, '07:00 - 17:30 WIB', 'aktif', 1),
-            (6, 5, 'Sentra Kuliner Rujak Petis & Ikan Bakar Madura', 'Sentra jajanan dan makanan khas pesisir Madura di Pantai Jumiang. Menyajikan hidangan otentik rujak petis Madura dengan taburan keripik tette, ikan tongkol dan kakap bakar bumbu rica pesisir, es degan (kelapa muda) segar, dan camilan lokal khas Pamekasan.', 'Zona Kuliner Pesisir Pantai Jumiang, Desa Tanjung, Kec. Pademawu, Kab. Pamekasan, Madura', -7.2329500, 113.5478000, 0.00, '07:30 - 18:00 WIB', 'aktif', 1),
-            (7, 2, 'Dermaga & Pangkalan Perahu Wisata Jumiang', 'Pangkalan perahu motor tradisional bercorak khas nelayan Madura. Menyediakan paket sewa perahu keliling tanjung karang Jumiang untuk melihat keelokan tebing dari tengah laut serta menikmati sensasi hembusan ombak perairan pesisir.', 'Pesisir Barat Tanjung Jumiang, Desa Tanjung, Kec. Pademawu, Kab. Pamekasan, Madura', -7.2312000, 113.5468000, 25000.00, '06:30 - 16:30 WIB', 'aktif', 1),
-            (8, 4, 'Camping Ground & Area Outbound Bukit Jumiang', 'Area perkemahan rumput datar di bagian perbukitan pesisir Pantai Jumiang. Cocok untuk kegiatan perkemahan akhir pekan (camping ground), gathering komunitas, outbond, serta menikmati ketenangan malam berbintang dengan deburan suara ombak.', 'Bukit Selatan Pantai Jumiang, Desa Tanjung, Kec. Pademawu, Kab. Pamekasan, Madura', -7.2351000, 113.5481000, 20000.00, '24 Jam (Registrasi Pengelola)', 'aktif', 1),
-            (9, 5, 'Gerbang Utama, Loket Retribusi & Parkir Terpadu', 'Pintu gerbang kedatangan utama kawasan Wisata Pantai Jumiang yang dilengkapi pos retribusi resmi tiket masuk, papan peta navigasi kawasan, sentra informasi Pokdarwis, serta lapangan parkir tertata luas untuk sepeda motor, mobil, dan bus pariwisata.', 'Pintu Gerbang Pantai Jumiang, Dusun Jumiang, Desa Tanjung, Kec. Pademawu, Kab. Pamekasan, Madura', -7.2308000, 113.5475000, 5000.00, '06:00 - 18:00 WIB', 'aktif', 1),
-            (10, 5, 'Kompleks Gazebo & Fasilitas Sanitasi (Musholla & Bilas)', 'Pusat fasilitas umum dan kenyamanan pengunjung yang menyediakan deretan gazebo saung kayu kelapa untuk istirahat keluarga, Musholla Al-Bahri untuk ibadah, serta deretan kamar mandi bilas air tawar yang bersih dan higienis.', 'Zona Fasilitas Tengah Pantai Jumiang, Desa Tanjung, Kec. Pademawu, Kab. Pamekasan, Madura', -7.2322000, 113.5491000, 3000.00, '06:00 - 18:00 WIB', 'aktif', 1);");
+            (1, 1, 'Bukit Tebing Karang Jumiang Atas', 'Ikon utama Pantai Jumiang berupa tebing batu karang kokoh setinggi belasan meter yang menjorok langsung ke deburan ombak Selat Madura. Berfungsi sebagai balkon alam terbuka untuk menikmati panorama laut lepas membiru dan pemandangan eksotis pesisir selatan Pamekasan.', 'Kawasan Tebing Karang Jumiang Atas, Dusun Jumiang, Desa Tanjung, Kec. Pademawu, Pamekasan, Madura', -7.2341200, 113.5501500, 5000.00, '06:00 - 17:30 WIB', 'aktif', 1),
+            (2, 2, 'Pantai Pasir Putih Jumiang Bawah', 'Area pesisir landai berpasir putih alami di bagian bawah tebing Jumiang. Memiliki deburan ombak yang relatif tenang dan perairan jernih, sangat disukai anak-anak dan keluarga untuk bermain pasir pantai, berenang, serta berjalan-jalan di tepi air laut.', 'Pesisir Teluk Jumiang Bawah, Dusun Jumiang, Desa Tanjung, Kec. Pademawu, Pamekasan, Madura', -7.2325800, 113.5512000, 5000.00, '06:00 - 17:30 WIB', 'aktif', 1),
+            (3, 1, 'Gardu Pandang Puncak Tebing Sunset & Sunrise', 'Titik elevasi tertinggi di atas bukit karang Jumiang Atas. Menjadi lokasi terbaik dan paling ramai dikunjungi saat pagi hari untuk melihat indahnya matahari terbit (sunrise) serta sore hari untuk menikmati matahari terbenam (sunset) dengan latar siluet Selat Madura.', 'Puncak Bukit Karang Jumiang, Desa Tanjung, Kec. Pademawu, Pamekasan, Madura', -7.2338500, 113.5489000, 0.00, '05:30 - 17:30 WIB', 'aktif', 1),
+            (4, 3, 'Hutan Cemara Udang Pesisir Jumiang', 'Kawasan rindang pepohonan cemara udang khas pesisir Madura yang tumbuh lebat di sepanjang bibir pantai. Menghadirkan udara sejuk dan suasana teduh alami, menjadi lokasi favorit pengunjung untuk menggelar tikar piknik keluarga sambil menikmati camilan pesisir.', 'Jalur Cemara Pesisir Jumiang, Desa Tanjung, Kec. Pademawu, Pamekasan, Madura', -7.2319000, 113.5482000, 0.00, '06:00 - 17:30 WIB', 'aktif', 1),
+            (5, 2, 'Pangkalan Perahu Tradisional Nelayan Madura', 'Pangkalan perahu jukung tradisional nelayan Madura bermotif khas warna-warni yang bersandar di pesisir Jumiang Bawah. Pengunjung dapat menyewa perahu motor nelayan lokal untuk berlayar mengitari tanjung tebing karang dan melihat keindahan batuan karang dari tengah laut.', 'Pesisir Tambat Perahu Jumiang Bawah, Desa Tanjung, Kec. Pademawu, Pamekasan, Madura', -7.2312000, 113.5468000, 20000.00, '06:30 - 16:30 WIB', 'aktif', 1),
+            (6, 4, 'Wahana Banana Boat & Sewa Ban Pelampung', 'Wahana permainan air seru di pesisir Jumiang Bawah berupa perahu pisang (banana boat) berkecepatan sedang yang ditarik perahu motor mengelilingi perairan teluk. Tersedia pula penyewaan ban karet pelampung untuk berenang santai di tepi pantai.', 'Zona Rekreasi Air Pantai Jumiang Bawah, Desa Tanjung, Kec. Pademawu, Pamekasan, Madura', -7.2323000, 113.5505000, 30000.00, '07:30 - 16:30 WIB', 'aktif', 1),
+            (7, 4, 'Spot Ayunan Tebing & Dekorasi Swafoto', 'Spot foto instagramable di tepi tebing karang Jumiang Atas berupa ayunan kayu yang menghadap langsung ke laut lepas biru serta hiasan gardu foto berbentuk kapal. Lokasi favorit muda-mudi untuk berfoto dengan latar panorama laut bebas.', 'Bibir Tebing Jumiang Atas, Desa Tanjung, Kec. Pademawu, Pamekasan, Madura', -7.2348000, 113.5496000, 0.00, '06:00 - 17:30 WIB', 'aktif', 1),
+            (8, 5, 'Sentra Warung Rujak Petis Madura & Es Kelapa Muda', 'Deretan warung kuliner tradisional khas pesisir di area Jumiang Atas. Menyajikan kuliner otentik rujak petis Madura ulek dengan bumbu petis ikan gurih pedas khas Pamekasan, es kelapa muda murni segar, keripik tette, mi instan, kopi jahe, dan aneka jajanan lokal.', 'Sentra Kuliner Pesisir Jumiang Atas, Desa Tanjung, Kec. Pademawu, Pamekasan, Madura', -7.2329500, 113.5478000, 0.00, '07:00 - 17:30 WIB', 'aktif', 1),
+            (9, 5, 'Pos Retribusi Tiket Masuk & Parkir Kendaraan', 'Pintu masuk utama kawasan Wisata Pantai Jumiang yang dijaga petugas pengelola Pokdarwis Desa Tanjung. Tiket masuk sangat terjangkau Rp5.000 per orang, didukung area parkir teduh dan aman untuk sepeda motor (Rp3.000) maupun mobil (Rp5.000).', 'Pintu Masuk Pantai Jumiang, Dusun Jumiang, Desa Tanjung, Kec. Pademawu, Pamekasan, Madura', -7.2308000, 113.5475000, 5000.00, '06:00 - 17:30 WIB', 'aktif', 1),
+            (10, 5, 'Area Gazebo Santai, Mushola & Kamar Bilas', 'Pusat fasilitas umum di kawasan Pantai Jumiang yang menyediakan deretan saung kayu/bambu sederhana di tepi tebing untuk duduk santai menikmati angin laut, mushola untuk ibadah sholat, serta bilik kamar mandi bilas air tawar bersih setelah bermain di laut.', 'Zona Fasilitas Tengah Jumiang, Desa Tanjung, Kec. Pademawu, Pamekasan, Madura', -7.2322000, 113.5491000, 2000.00, '06:00 - 17:30 WIB', 'aktif', 1);");
 
         // Seed Wisata Fasilitas
         $pdo->exec("INSERT INTO wisata_fasilitas (id_wisata, id_fasilitas, keterangan) VALUES
-            (1, 1, 'Gazebo kayu santai di atas tebing karang'),
-            (1, 2, 'Gardu pandang menghadap deburan ombak Selat Madura'),
-            (1, 8, 'Spot foto panorama tebing batu karang alami'),
-            (1, 10, 'Pos pantau keselamatan tebing Pokdarwis'),
-            (2, 1, 'Pondok santai di pinggir hamparan pasir putih'),
-            (2, 3, 'Akses dekat ke bilas air tawar'),
-            (2, 8, 'Spot foto pesisir teluk berpasir putih'),
-            (2, 10, 'Pengawasan tepi pantai untuk keluarga'),
-            (3, 1, 'Saung berteduh di puncak bukit'),
-            (3, 2, 'Anjungan kayu pandang panorama 360 derajat'),
-            (3, 8, 'Spot foto sunset terbaik di Pamekasan Madura'),
-            (4, 1, 'Gazebo sejuk di bawah naungan pohon cemara'),
-            (4, 7, 'Akses jalan setapak teduh'),
-            (4, 8, 'Spot foto lorong pohon cemara estetik'),
-            (5, 2, 'Pemandangan laut lepas dari bibir tebing'),
-            (5, 8, 'Ayunan kayu gantung tepi laut & anjungan perahu'),
-            (6, 3, 'Wastafel cuci tangan dan toilet'),
-            (6, 5, 'Warung rujak petis Madura & ikan bakar segar'),
-            (6, 7, 'Dekat dengan area parkir kendaraan'),
-            (7, 6, 'Penyewaan perahu motor tradisional nelayan Madura'),
-            (7, 10, 'Petugas pemandu penyeberangan perairan'),
-            (8, 3, 'Toilet bilas darurat dekat area bukit'),
-            (8, 9, 'Area perkemahan rumput luas & zona api unggun'),
-            (8, 10, 'Izin keamanan dan pengawasan malam hari'),
-            (9, 7, 'Area parkir motor, mobil pribadi, dan bus luas'),
-            (9, 10, 'Pusat informasi Pokdarwis & loket retribusi'),
-            (10, 1, 'Deretan gazebo kayu keluarga'),
-            (10, 3, '12 bilik kamar mandi bilas air tawar bersih'),
-            (10, 4, 'Musholla Al-Bahri dengan tempat wudhu bersih');");
+            (1, 1, 'Gazebo bambu sederhana di tepi tebing karang'),
+            (1, 2, 'Gardu pandang alami menghadap deburan ombak Selat Madura'),
+            (1, 8, 'Spot foto panorama tebing batu karang'),
+            (2, 1, 'Tikar santai dan saung teduh di pinggir pasir putih'),
+            (2, 3, 'Dekat dengan bilas air tawar'),
+            (2, 9, 'Area aman bermain air dan sewa ban pelampung'),
+            (3, 1, 'Bangku kayu santai di puncak bukit'),
+            (3, 2, 'Pemandangan 360 derajat cakrawala Selat Madura'),
+            (3, 8, 'Spot foto sunrise dan sunset terbaik di Pamekasan'),
+            (4, 1, 'Gazebo sejuk di bawah naungan pohon cemara udang'),
+            (4, 7, 'Jalur jalan setapak teduh'),
+            (4, 8, 'Spot foto lorong pohon cemara pesisir'),
+            (5, 6, 'Sewa perahu tradisional nelayan Madura keliling tebing'),
+            (5, 10, 'Pemandu nelayan lokal berpengalaman'),
+            (6, 9, 'Wahana banana boat seru keliling teluk Jumiang'),
+            (6, 3, 'Kamar bilas air tawar setelah bermain basah-basahan'),
+            (7, 8, 'Ayunan kayu di bibir tebing menghadap laut lepas'),
+            (7, 2, 'Pemandangan laut Selat Madura yang membiru'),
+            (8, 5, 'Rujak petis Madura, es degan murni, dan aneka camilan'),
+            (8, 1, 'Saung makan santai dengan angin sepoi-sepoi tebing'),
+            (9, 7, 'Area parkir motor Rp3.000 dan mobil Rp5.000'),
+            (9, 10, 'Loket tiket resmi Rp5.000/orang Pokdarwis Desa Tanjung'),
+            (10, 1, 'Deretan gazebo kayu/bambu untuk istirahat keluarga'),
+            (10, 3, 'Kamar mandi bilas air tawar bersih (Rp2.000)'),
+            (10, 4, 'Mushola sederhana untuk sholat pengunjung');");
 
         // Seed Foto Wisata
         $pdo->exec("INSERT INTO foto_wisata (id_foto, id_wisata, nama_file, keterangan) VALUES
-            (1, 1, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', 'Eksotisme Tebing Batu Karang Pantai Jumiang Pamekasan'),
-            (2, 1, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', 'Deburan Ombak Selat Madura Menghempas Tebing Jumiang'),
-            (3, 2, 'https://images.unsplash.com/photo-1509233725247-49e657c54213?auto=format&fit=crop&w=1200&q=80', 'Hamparan Pasir Putih Bersih di Teluk Pantai Jumiang'),
-            (4, 2, 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=1200&q=80', 'Perairan Tenang Teluk Pesisir Jumiang Pamekasan'),
-            (5, 3, 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', 'Pemandangan Sunset Keemasan dari Gardu Pandang Bukit Jumiang'),
-            (6, 3, 'https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=1200&q=80', 'Panorama Cakrawala Selat Madura dari Atas Tebing'),
-            (7, 4, 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80', 'Suasana Sejuk dan Asri Hutan Cemara Udang Jumiang'),
-            (8, 5, 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', 'Spot Ayunan Tepi Laut Berlatar Samudera Biru'),
-            (9, 6, 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80', 'Suasana Santai Saung Kuliner Pesisir Pantai Jumiang'),
-            (10, 7, 'https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=1200&q=80', 'Perahu Nelayan Tradisional Madura Siap Mengantar Wisatawan'),
-            (11, 8, 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80', 'Area Perkemahan Bukit Karang Menghadap Lautan Lepas'),
-            (12, 9, 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?auto=format&fit=crop&w=1200&q=80', 'Pintu Gerbang dan Papan Selamat Datang Kawasan Jumiang'),
-            (13, 10, 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', 'Deretan Gazebo Nyaman Tempat Beristirahat Wisatawan');");
+            (1, 1, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', 'Panorama Tebing Karang Jumiang Atas Menghadap Selat Madura'),
+            (2, 1, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', 'Pemandangan Ombak Menghempas Tebing Karang Alami'),
+            (3, 2, 'https://images.unsplash.com/photo-1509233725247-49e657c54213?auto=format&fit=crop&w=1200&q=80', 'Hamparan Pasir Putih dan Perairan Tenang Jumiang Bawah'),
+            (4, 2, 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=1200&q=80', 'Pesisir Pantai Landai Cocok untuk Rekreasi Keluarga'),
+            (5, 3, 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80', 'Pemandangan Sunset Keemasan dari Gardu Pandang Tebing Jumiang'),
+            (6, 3, 'https://images.unsplash.com/photo-1516690561799-46d8f74f9abf?auto=format&fit=crop&w=1200&q=80', 'Siluet Senja di Atas Bukit Tebing Selat Madura'),
+            (7, 4, 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=1200&q=80', 'Suasana Sejuk dan Teduh di Bawah Pohon Cemara Udang'),
+            (8, 5, 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80', 'Perahu Tradisional Nelayan Madura Bersandar di Jumiang Bawah'),
+            (9, 6, 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', 'Aktivitas Wahana Air dan Rekreasi di Pesisir Pantai'),
+            (10, 7, 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', 'Spot Ayunan Kayu di Tepi Tebing dengan Latar Laut Biru'),
+            (11, 8, 'https://images.unsplash.com/photo-1528495612343-9ca9f4a4de28?auto=format&fit=crop&w=1200&q=80', 'Sajian Kelapa Muda Segar dan Warung Santai Tepi Pantai'),
+            (12, 9, 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=80', 'Area Parkir Kendaraan yang Rindang dan Pos Masuk Wisata'),
+            (13, 10, 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80', 'Deretan Gazebo Sederhana Tempat Beristirahat Wisatawan');");
     }
 }
 
