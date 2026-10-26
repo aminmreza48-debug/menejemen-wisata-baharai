@@ -1,0 +1,780 @@
+/* ==============================================================
+   BahariGIS — Sistem Informasi Geografis Wisata Bahari
+   Aesthetic Maritime / Oceanic Design System
+   ============================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap');
+
+:root {
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, serif;
+
+  /* Ocean Color Palette */
+  --ocean-900: #041c32;
+  --ocean-800: #062846;
+  --ocean-700: #0a3d62;
+  --ocean-600: #0f4c81;
+  --ocean-500: #0077b6;
+  --ocean-400: #0096c7;
+  --ocean-300: #48cae4;
+  --ocean-200: #90e0ef;
+  --ocean-100: #ade8f4;
+  --ocean-50:  #e0f7fa;
+  --ocean-bg:  #f4f9fd;
+
+  --seafoam:   #06d6a0;
+  --coral:     #ff6b6b;
+  --sand:      #fdfbf7;
+  --gold:      #f59e0b;
+  --dark:      #0b192c;
+  --text-muted:#64748b;
+  --border-light: rgba(15, 76, 129, 0.12);
+
+  --glass-bg: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.6);
+  --glass-shadow: 0 10px 30px rgba(4, 28, 50, 0.08);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--ocean-bg);
+  color: var(--dark);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* -------------------------------------------------------------
+   Typography & Accents
+   ------------------------------------------------------------- */
+h1, h2, h3, .font-serif {
+  font-family: var(--font-serif);
+}
+
+.text-ocean-primary { color: var(--ocean-600) !important; }
+.text-ocean-accent  { color: var(--ocean-400) !important; }
+.text-seafoam       { color: var(--seafoam) !important; }
+.text-coral         { color: var(--coral) !important; }
+
+.bg-ocean-primary   { background-color: var(--ocean-700) !important; }
+.bg-ocean-gradient  {
+  background: linear-gradient(135deg, var(--ocean-900) 0%, var(--ocean-700) 50%, var(--ocean-500) 100%);
+}
+.bg-ocean-soft {
+  background: linear-gradient(180deg, #ffffff 0%, var(--ocean-bg) 100%);
+}
+
+/* -------------------------------------------------------------
+   Navbar (Glassmorphic Maritime Header)
+   ------------------------------------------------------------- */
+.navbar-bahari {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: 0 4px 20px rgba(10, 61, 98, 0.05);
+  transition: var(--transition);
+  padding: 0.85rem 0;
+  z-index: 1040;
+}
+
+.navbar-bahari .navbar-brand {
+  font-weight: 800;
+  font-size: 1.45rem;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ocean-800);
+}
+
+.brand-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--ocean-500), var(--seafoam));
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.28);
+}
+
+.navbar-bahari .nav-link {
+  font-weight: 600;
+  color: var(--ocean-800);
+  padding: 0.5rem 1rem !important;
+  border-radius: var(--radius-sm);
+  transition: var(--transition);
+}
+
+.navbar-bahari .nav-link:hover,
+.navbar-bahari .nav-link.active {
+  color: var(--ocean-500);
+  background: var(--ocean-50);
+}
+
+.btn-nav-admin {
+  background: linear-gradient(135deg, var(--ocean-600), var(--ocean-500));
+  color: #fff !important;
+  padding: 0.45rem 1.2rem !important;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(15, 76, 129, 0.22);
+}
+.btn-nav-admin:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 76, 129, 0.35);
+}
+
+/* -------------------------------------------------------------
+   Hero Banner Section
+   ------------------------------------------------------------- */
+.hero-bahari {
+  position: relative;
+  background: linear-gradient(135deg, rgba(4, 28, 50, 0.88), rgba(15, 76, 129, 0.82)),
+              url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+  color: #fff;
+  padding: 4.5rem 0 3.5rem;
+  overflow: hidden;
+}
+
+.hero-bahari::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: var(--ocean-bg);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 680px;
+  margin: 0 auto 2rem;
+}
+
+/* -------------------------------------------------------------
+   Search & Filter Floating Control Bar
+   ------------------------------------------------------------- */
+.search-box-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 15px 35px rgba(4, 28, 50, 0.12);
+  border-radius: var(--radius-xl);
+  padding: 1.2rem;
+  margin-top: -2.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.input-search-bahari {
+  border: 1px solid #cbd5e1;
+  border-radius: 30px;
+  padding: 0.75rem 1.4rem;
+  padding-left: 2.8rem;
+  font-size: 0.98rem;
+  transition: var(--transition);
+}
+
+.input-search-bahari:focus {
+  border-color: var(--ocean-500);
+  box-shadow: 0 0 0 4px rgba(0, 119, 182, 0.15);
+}
+
+.search-icon-wrap {
+  position: absolute;
+  left: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--ocean-500);
+  font-size: 1.15rem;
+}
+
+/* Category Filter Pills */
+.category-pills-container {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 6px 2px;
+  scrollbar-width: thin;
+}
+
+.category-pill {
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: var(--ocean-800);
+  padding: 0.45rem 1rem;
+  border-radius: 30px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+  user-select: none;
+}
+
+.category-pill:hover {
+  border-color: var(--ocean-400);
+  background: var(--ocean-50);
+  transform: translateY(-1px);
+}
+
+.category-pill.active {
+  background: linear-gradient(135deg, var(--ocean-600), var(--ocean-500));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.25);
+}
+
+.category-pill .badge {
+  font-size: 0.72rem;
+  padding: 2px 7px;
+  border-radius: 12px;
+}
+
+/* -------------------------------------------------------------
+   Interactive Map Section (KF-01, KF-05)
+   ------------------------------------------------------------- */
+.map-wrapper {
+  position: relative;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--glass-shadow);
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+#mapWisata {
+  width: 100%;
+  height: 580px;
+  z-index: 1;
+}
+
+/* Map Header Floating Overlay */
+.map-floating-overlay {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 500;
+  display: flex;
+  gap: 8px;
+}
+
+.map-control-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 0.45rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ocean-800);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+}
+
+.map-control-btn:hover {
+  background: var(--ocean-50);
+  border-color: var(--ocean-400);
+  color: var(--ocean-600);
+}
+
+/* Map Stats Bottom Left Badge */
+.map-stats-badge {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 500;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--ocean-800);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pulse-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--seafoam);
+  box-shadow: 0 0 0 0 rgba(6, 214, 160, 0.7);
+  animation: pulse-ring 1.8s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(6, 214, 160, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(6, 214, 160, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(6, 214, 160, 0); }
+}
+
+/* Custom Marker Styling for Leaflet */
+.custom-ocean-pin {
+  width: 38px;
+  height: 38px;
+  border-radius: 50% 50% 50% 0;
+  background: linear-gradient(135deg, var(--ocean-600), var(--ocean-400));
+  transform: rotate(-45deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.28);
+  border: 2px solid #ffffff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.custom-ocean-pin:hover {
+  transform: rotate(-45deg) scale(1.15);
+}
+
+.custom-ocean-pin-inner {
+  transform: rotate(45deg);
+  color: #ffffff;
+  font-size: 15px;
+}
+
+/* Leaflet Popup Styling */
+.leaflet-popup-content-wrapper {
+  padding: 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(4, 28, 50, 0.2);
+  border: 1px solid rgba(0, 119, 182, 0.15);
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  width: 290px !important;
+  line-height: 1.5;
+}
+
+.popup-card-header {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+}
+
+.popup-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.leaflet-popup:hover .popup-card-img {
+  transform: scale(1.05);
+}
+
+.popup-card-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(4, 28, 50, 0.85);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 20px;
+}
+
+.popup-card-price {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(6, 214, 160, 0.92);
+  color: #041c32;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+
+.popup-card-body {
+  padding: 14px;
+}
+
+.popup-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ocean-900);
+  margin-bottom: 4px;
+}
+
+.popup-address {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.popup-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.btn-popup-detail {
+  flex: 1;
+  background: var(--ocean-600);
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.btn-popup-detail:hover {
+  background: var(--ocean-500);
+  color: #fff;
+}
+
+.btn-popup-direction {
+  background: #f1f5f9;
+  color: var(--ocean-700);
+  border: 1px solid #cbd5e1;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-popup-direction:hover {
+  background: var(--ocean-50);
+  color: var(--ocean-600);
+}
+
+/* -------------------------------------------------------------
+   Destination Cards (KF-04, Beranda & Daftar Wisata)
+   ------------------------------------------------------------- */
+.card-wisata {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(4, 28, 50, 0.04);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-wisata:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(4, 28, 50, 0.12);
+  border-color: rgba(0, 119, 182, 0.28);
+}
+
+.card-wisata-img-wrapper {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: #e2e8f0;
+}
+
+.card-wisata-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.card-wisata:hover .card-wisata-img {
+  transform: scale(1.08);
+}
+
+.card-wisata-category {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(4, 28, 50, 0.82);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.card-wisata-price {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  color: var(--ocean-800);
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 5px 12px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-wisata-body {
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-wisata-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--ocean-900);
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.card-wisata-location {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card-wisata-desc {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-bottom: 1.2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.card-wisata-footer {
+  display: flex;
+  gap: 8px;
+  padding-top: 0.8rem;
+  border-top: 1px solid #f1f5f9;
+}
+
+.btn-card-detail {
+  flex: 1;
+  background: var(--ocean-50);
+  color: var(--ocean-600);
+  border: 1px solid var(--ocean-100);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.8rem;
+  font-weight: 600;
+  font-size: 0.88rem;
+  text-align: center;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.btn-card-detail:hover {
+  background: var(--ocean-600);
+  color: #fff;
+  border-color: var(--ocean-600);
+}
+
+.btn-card-map {
+  background: #f8fafc;
+  color: var(--ocean-700);
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.8rem;
+  font-size: 0.88rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  text-decoration: none;
+}
+.btn-card-map:hover {
+  background: var(--ocean-50);
+  color: var(--ocean-600);
+}
+
+/* -------------------------------------------------------------
+   Detail Modal & Section (KF-04, KF-06)
+   ------------------------------------------------------------- */
+.modal-wisata-header {
+  background: linear-gradient(135deg, var(--ocean-800), var(--ocean-600));
+  color: #fff;
+  border-top-left-radius: var(--radius-lg);
+  border-top-right-radius: var(--radius-lg);
+}
+
+.gallery-carousel-item {
+  height: 380px;
+  background: #000;
+}
+.gallery-carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.badge-fasilitas {
+  background: var(--ocean-50);
+  color: var(--ocean-800);
+  border: 1px solid var(--ocean-200);
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-right: 6px;
+  margin-bottom: 8px;
+}
+
+.info-attr-table {
+  width: 100%;
+  margin-top: 1rem;
+}
+.info-attr-table td {
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+.info-attr-table td:first-child {
+  font-weight: 600;
+  color: var(--text-muted);
+  width: 35%;
+}
+
+/* -------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------- */
+.footer-bahari {
+  background: var(--ocean-900);
+  color: #94a3b8;
+  padding: 4rem 0 2rem;
+  margin-top: 4rem;
+  position: relative;
+}
+
+.footer-brand {
+  font-family: var(--font-serif);
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.footer-link {
+  color: #cbd5e1;
+  text-decoration: none;
+  transition: var(--transition);
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.92rem;
+}
+.footer-link:hover {
+  color: var(--ocean-300);
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.8rem;
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+}
+
+/* -------------------------------------------------------------
+   Mobile Bottom Navigation (Responsive UX)
+   ------------------------------------------------------------- */
+.mobile-bottom-nav {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid var(--border-light);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.08);
+  z-index: 1030;
+  padding: 6px 0;
+}
+
+.mobile-bottom-nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 4px;
+}
+
+.mobile-bottom-nav-item i {
+  font-size: 1.25rem;
+  margin-bottom: 2px;
+}
+
+.mobile-bottom-nav-item.active,
+.mobile-bottom-nav-item:hover {
+  color: var(--ocean-500);
+}
+
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: flex;
+  }
+  body {
+    padding-bottom: 70px;
+  }
+  #mapWisata {
+    height: 420px;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+}

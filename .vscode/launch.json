@@ -1,0 +1,20 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Buka BahariGIS (Port 8000)",
+            "url": "http://localhost:8000",
+            "webRoot": "${workspaceFolder}",
+            "preLaunchTask": "Start PHP Server"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Buka BahariGIS (Port 8080)",
+            "url": "http://localhost:8080",
+            "webRoot": "${workspaceFolder}"
+        }
+    ]
+}
