@@ -252,7 +252,7 @@ class Database {
             (8, 5, 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1200&q=80', 'Perahu Tradisional Nelayan Madura Bersandar di Jumiang Bawah'),
             (9, 6, 'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=1200&q=80', 'Aktivitas Wahana Air dan Rekreasi di Pesisir Pantai'),
             (10, 7, 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?auto=format&fit=crop&w=1200&q=80', 'Spot Ayunan Kayu di Tepi Tebing dengan Latar Laut Biru'),
-            (11, 8, 'https://images.unsplash.com/photo-1528495612343-9ca9f4a4de28?auto=format&fit=crop&w=1200&q=80', 'Sajian Kelapa Muda Segar dan Warung Santai Tepi Pantai'),
+            (11, 8, 'assets/img/rujak_petis_madura.jpg', 'Sajian Otentik Rujak Petis Madura Khas Pamekasan'),
             (12, 9, 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&w=1200&q=80', 'Area Parkir Kendaraan yang Rindang dan Pos Masuk Wisata'),
             (13, 10, 'https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=1200&q=80', 'Deretan Gazebo Sederhana Tempat Beristirahat Wisatawan');");
     }
