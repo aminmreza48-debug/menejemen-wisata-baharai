@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
         const mapContainer = document.getElementById('mapWisata');
         if (!mapContainer) return;
 
-        // Titik tengah default: Pantai Jumiang, Pamekasan, Madura, Jawa Timur
+        // Titik tengah default: Kawasan Wisata Pantai Jumiang, Pademawu, Pamekasan, Madura
         map = L.map('mapWisata', {
-            center: [-7.2335225, 113.5492742],
-            zoom: 13,
+            center: [-7.2332, 113.5490],
+            zoom: 16,
             zoomControl: false,
-            minZoom: 4,
-            maxZoom: 18
+            minZoom: 10,
+            maxZoom: 19
         });
 
         // Kontrol Zoom di sudut kanan bawah
@@ -41,6 +41,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Default pakai OpenStreetMap Standard
         osmStandard.addTo(map);
+
+        // Polygon Delimitasi Batas Kawasan Wisata Pantai Jumiang Madura
+        const jumiangBoundary = L.polygon([
+            [-7.2302, 113.5462],
+            [-7.2304, 113.5516],
+            [-7.2324, 113.5526],
+            [-7.2348, 113.5516],
+            [-7.2358, 113.5492],
+            [-7.2355, 113.5472],
+            [-7.2332, 113.5460]
+        ], {
+            color: '#0077b6',
+            weight: 2,
+            dashArray: '4, 6',
+            fillColor: '#00b4d8',
+            fillOpacity: 0.10
+        }).addTo(map);
+        jumiangBoundary.bindTooltip('<b>Kawasan Wisata Pantai Jumiang</b><br><small>Desa Tanjung, Pademawu, Pamekasan, Madura</small>', {
+            sticky: true
+        });
 
         baseLayers = {
             "Peta Standar (OSM)": osmStandard,
@@ -124,9 +144,9 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!map || currentData.length === 0) return;
         const group = L.featureGroup(markersLayer.getLayers());
         if (group.getLayers().length > 0) {
-            map.fitBounds(group.getBounds().pad(0.15));
+            map.fitBounds(group.getBounds().pad(0.18), { maxZoom: 16 });
         } else {
-            map.flyTo([-7.2335225, 113.5492742], 13);
+            map.flyTo([-7.2332, 113.5490], 16);
         }
     }
 
@@ -152,14 +172,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 renderMarkers(currentData);
                 renderDestinationCards(currentData);
                 updateStats(res.total, res.database_driver);
-
-                // Auto fokus ke Pantai Jumiang Pamekasan jika load pertama kali (tanpa filter pencarian)
-                if (!keyword && (!kategoriId || kategoriId === '0' || kategoriId === 0)) {
-                    const jumiang = currentData.find(d => d.nama_wisata && d.nama_wisata.toLowerCase().includes('jumiang'));
-                    if (jumiang) {
-                        map.setView([jumiang.latitude, jumiang.longitude], 13);
-                    }
-                }
             })
             .catch(err => {
                 if (loadingBadge) loadingBadge.style.display = 'none';

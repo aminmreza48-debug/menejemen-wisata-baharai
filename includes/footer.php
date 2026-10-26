@@ -9,10 +9,10 @@
         <div class="row gy-4">
             <div class="col-lg-4 col-md-6">
                 <div class="footer-brand">
-                    <i class="bi bi-water me-2 text-info"></i>Bahari<span>GIS</span>
+                    <i class="bi bi-geo-alt-fill me-2 text-info"></i>Pantai<span class="text-info">Jumiang</span> <small class="text-white-50 fs-6">GIS</small>
                 </div>
                 <p class="text-secondary small" style="line-height: 1.8;">
-                    Sistem Informasi Geografis Wisata Bahari interaktif berbasis web untuk memetakan dan mempromosikan keindahan pesisir, kepulauan tropis, serta biota laut Indonesia.
+                    Sistem Informasi Geografis Wisata Madura Pantai Jumiang interaktif berbasis web untuk memetakan panorama tebing karang, pantai pasir putih, hutan cemara, kuliner rujak petis Madura, dan fasilitas di Desa Tanjung, Pademawu, Pamekasan.
                 </p>
                 <div class="d-flex gap-2 mt-3">
                     <span class="badge bg-secondary bg-opacity-25 text-light px-3 py-2 rounded-pill small">
@@ -24,17 +24,18 @@
             <div class="col-lg-2 col-md-3 col-6">
                 <h6 class="text-white fw-bold mb-3">Eksplorasi</h6>
                 <a href="index.php" class="footer-link">Beranda</a>
-                <a href="index.php#sectionPeta" class="footer-link">Peta Interaktif</a>
-                <a href="daftar-wisata.php" class="footer-link">Katalog Destinasi</a>
-                <a href="tentang.php" class="footer-link">Tentang Proyek</a>
+                <a href="index.php#sectionPeta" class="footer-link">Peta Jumiang</a>
+                <a href="daftar-wisata.php" class="footer-link">Katalog Spot</a>
+                <a href="tentang.php" class="footer-link">Dokumentasi</a>
             </div>
 
             <div class="col-lg-3 col-md-3 col-6">
-                <h6 class="text-white fw-bold mb-3">Kategori Populer</h6>
-                <a href="daftar-wisata.php?kategori=1" class="footer-link">Pantai Pasir Putih</a>
-                <a href="daftar-wisata.php?kategori=2" class="footer-link">Pulau Eksotis</a>
-                <a href="daftar-wisata.php?kategori=3" class="footer-link">Spot Snorkeling</a>
-                <a href="daftar-wisata.php?kategori=4" class="footer-link">Spot Diving Karang</a>
+                <h6 class="text-white fw-bold mb-3">Kategori Spot</h6>
+                <a href="daftar-wisata.php?kategori=1" class="footer-link">Tebing Karang & Panorama</a>
+                <a href="daftar-wisata.php?kategori=2" class="footer-link">Pantai Pasir Putih</a>
+                <a href="daftar-wisata.php?kategori=3" class="footer-link">Hutan Cemara Udang</a>
+                <a href="daftar-wisata.php?kategori=4" class="footer-link">Spot Foto & Sunset</a>
+                <a href="daftar-wisata.php?kategori=5" class="footer-link">Kuliner Khas Madura</a>
             </div>
 
             <div class="col-lg-3 col-md-12">
@@ -52,10 +53,10 @@
 
         <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
             <div>
-                &copy; <?= date('Y') ?> <strong>BahariGIS</strong>. Hak Cipta Dilindungi Undang-Undang.
+                &copy; <?= date('Y') ?> <strong>Wisata Madura Pantai Jumiang GIS</strong>. Hak Cipta Dilindungi.
             </div>
             <div class="text-secondary small">
-                Dirancang untuk Praktikum & Pengelolaan Data Spasial Pesisir
+                Pokdarwis Dusun Jumiang, Desa Tanjung, Pademawu, Pamekasan, Madura
             </div>
         </div>
     </div>
@@ -67,7 +68,7 @@
         <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
             <div class="modal-header modal-wisata-header border-0 py-3">
                 <h5 class="modal-title font-serif text-white d-flex align-items-center gap-2" id="detailWisataModalLabel">
-                    <i class="bi bi-water text-warning"></i> Detail Informasi Wisata Bahari
+                    <i class="bi bi-geo-alt-fill text-warning"></i> Detail Spot Wisata Pantai Jumiang Madura
                 </h5>
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>

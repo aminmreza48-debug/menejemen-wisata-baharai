@@ -14,7 +14,7 @@ $userRole = $_SESSION['role'] ?? 'admin';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= isset($pageTitle) ? htmlspecialchars($pageTitle) . ' — ' : '' ?>Admin BahariGIS</title>
+    <title><?= isset($pageTitle) ? htmlspecialchars($pageTitle) . ' — ' : '' ?>Admin Wisata Madura Pantai Jumiang</title>
 
     <!-- Bootstrap 5.3 & Icons CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -33,11 +33,11 @@ $userRole = $_SESSION['role'] ?? 'admin';
 <aside class="admin-sidebar" id="adminSidebar">
     <div class="admin-sidebar-header">
         <span class="brand-icon">
-            <i class="bi bi-water"></i>
+            <i class="bi bi-geo-alt-fill text-info"></i>
         </span>
         <div>
-            <h5 class="mb-0 text-white font-serif fw-bold">Bahari<span class="text-info">GIS</span></h5>
-            <small class="text-white-50">Panel Administrasi</small>
+            <h5 class="mb-0 text-white font-serif fw-bold">Pantai<span class="text-info">Jumiang</span></h5>
+            <small class="text-white-50">Admin GIS Madura</small>
         </div>
     </div>
 

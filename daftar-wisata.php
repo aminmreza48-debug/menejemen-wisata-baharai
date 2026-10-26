@@ -1,5 +1,5 @@
 <?php
-$pageTitle = "Daftar & Katalog Destinasi Wisata Bahari";
+$pageTitle = "Katalog Spot & Fasilitas Wisata Pantai Jumiang Madura";
 require_once __DIR__ . '/config/db.php';
 
 $db = getDB();
@@ -67,8 +67,8 @@ include __DIR__ . '/includes/header.php';
 <!-- Header Banner -->
 <section class="bg-ocean-primary text-white py-5">
     <div class="container text-center">
-        <h2 class="font-serif fw-bold mb-2">Katalog Destinasi Wisata Bahari</h2>
-        <p class="text-white-50 mb-0">Eksplorasi seluruh objek wisata pesisir, pulau, dan taman laut yang terdaftar.</p>
+        <h2 class="font-serif fw-bold mb-2">Katalog Spot & Fasilitas Wisata Pantai Jumiang</h2>
+        <p class="text-white-50 mb-0">Eksplorasi seluruh spot panorama tebing, pasir putih, hutan cemara, kuliner rujak petis Madura, dan sarana kawasan Pantai Jumiang.</p>
     </div>
 </section>
 

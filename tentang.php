@@ -7,8 +7,8 @@ include __DIR__ . '/includes/header.php';
 <!-- Header Banner -->
 <section class="bg-ocean-primary text-white py-5">
     <div class="container text-center">
-        <h2 class="font-serif fw-bold mb-2">Tentang BahariGIS</h2>
-        <p class="text-white-50 mb-0">Dokumentasi Perancangan Sistem Informasi Geografis Wisata Bahari — Semester 5</p>
+        <h2 class="font-serif fw-bold mb-2">Tentang SIG Wisata Madura Pantai Jumiang</h2>
+        <p class="text-white-50 mb-0">Dokumentasi Perancangan Sistem Informasi Geografis Kawasan Pantai Jumiang Pamekasan — Semester 5</p>
     </div>
 </section>
 
@@ -36,18 +36,18 @@ include __DIR__ . '/includes/header.php';
                 <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill small fw-bold mb-3 d-inline-block" style="width: fit-content;">
                     Identitas & Tujuan Sistem
                 </span>
-                <h3 class="font-serif fw-bold text-ocean-primary mb-3">1. Profil & Tujuan BahariGIS</h3>
+                <h3 class="font-serif fw-bold text-ocean-primary mb-3">1. Profil & Tujuan Sistem</h3>
                 <p class="text-secondary" style="line-height: 1.8;">
-                    <strong>BahariGIS</strong> merupakan aplikasi sistem informasi geografis berbasis web (WEBGIS) yang dirancang khusus untuk memetakan dan menyajikan informasi komprehensif mengenai objek wisata bahari di wilayah perairan Indonesia. Melalui peta interaktif digital, wisatawan dan pengambil kebijakan dapat mengetahui persebaran spasial, daya tarik pantai, terumbu karang, fasilitas pendukung, jam operasional, serta petunjuk rute perjalanan.
+                    <strong>SIG Wisata Madura Pantai Jumiang</strong> merupakan aplikasi sistem informasi geografis berbasis web (WebGIS) yang dirancang khusus untuk memetakan dan menyajikan informasi komprehensif mengenai objek wisata, spot panorama alam tebing karang, hamparan pasir putih, hutan cemara udang pesisir, sentra kuliner rujak petis Madura, serta fasilitas publik di kawasan <strong>Pantai Jumiang, Desa Tanjung, Kecamatan Pademawu, Kabupaten Pamekasan, Pulau Madura, Jawa Timur</strong>.
                 </p>
 
                 <h6 class="fw-bold text-dark mt-4 mb-2">Tujuan Utama Aplikasi:</h6>
                 <ul class="text-secondary small" style="line-height: 1.9;">
-                    <li>Memudahkan wisatawan menemukan lokasi wisata bahari melalui peta digital interaktif.</li>
-                    <li>Menyediakan informasi akurat mengenai daya tarik wisata, fasilitas, dan tiket masuk.</li>
-                    <li>Menampilkan persebaran geografis objek wisata bahari secara terpadu.</li>
-                    <li>Membantu pengelola dan dinas pariwisata dalam memperbarui data spasial objek wisata.</li>
-                    <li>Mendukung promosi pariwisata bahari dan pelestarian ekosistem pesisir daerah.</li>
+                    <li>Memudahkan wisatawan mengeksplorasi spot-spot menarik di kawasan Pantai Jumiang melalui peta digital interaktif berskala lokal.</li>
+                    <li>Menyediakan informasi detail mengenai daya tarik tebing karang, sunset viewpoint, tiket retribusi kawasan, dan jam operasional.</li>
+                    <li>Menampilkan persebaran spasial titik fasilitas (parkir, musholla, kamar bilas, gazebo, perahu sewa, kuliner) secara presisi.</li>
+                    <li>Membantu kelompok sadar wisata (Pokdarwis) Desa Tanjung dan pengelola dalam memperbarui data fasilitas dan foto secara mandiri.</li>
+                    <li>Mendukung promosi pariwisata daerah Kabupaten Pamekasan dan Pulau Madura ke tingkat nasional.</li>
                 </ul>
 
                 <h6 class="fw-bold text-dark mt-4 mb-2">Target Pengguna:</h6>

@@ -30,7 +30,7 @@ include __DIR__ . '/../includes/admin_header.php';
 <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
     <div>
         <h3 class="font-serif fw-bold text-ocean-primary mb-1">Selamat Datang, <?= htmlspecialchars($userName) ?>!</h3>
-        <p class="text-muted small mb-0">Kelola titik koordinat spasial dan informasi destinasi wisata bahari Indonesia.</p>
+        <p class="text-muted small mb-0">Kelola titik koordinat spasial, fasilitas, dan galeri kawasan Wisata Pantai Jumiang Madura.</p>
     </div>
     <div class="d-flex gap-2">
         <a href="wisata.php" class="btn btn-primary rounded-pill px-3 shadow-sm">
@@ -47,7 +47,7 @@ include __DIR__ . '/../includes/admin_header.php';
     <div class="col-sm-6 col-xl-3">
         <div class="stat-card">
             <div>
-                <small class="text-muted fw-bold text-uppercase" style="font-size: 0.72rem;">Total Wisata Bahari</small>
+                <small class="text-muted fw-bold text-uppercase" style="font-size: 0.72rem;">Total Spot & Fasilitas</small>
                 <h3 class="fw-bold text-ocean-primary my-1"><?= $totalWisata ?></h3>
                 <span class="badge bg-success bg-opacity-10 text-success small"><?= $totalAktif ?> Aktif</span>
                 <span class="badge bg-warning bg-opacity-10 text-warning small"><?= $totalDraft ?> Draft</span>

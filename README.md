@@ -1,24 +1,24 @@
-# BahariGIS — Sistem Informasi Geografis Wisata Bahari
+# SIG Wisata Madura Pantai Jumiang (Pamekasan)
 
 > **Tugas Mata Kuliah: Manajemen Web GIS (Semester 5)**  
-> **Aplikasi Berbasis:** Web GIS (Leaflet.js + OpenStreetMap + PHP PDO + MySQL / SQLite Dual-Mode)
+> **Aplikasi Berbasis:** Web GIS (Leaflet.js + OpenStreetMap + Esri Satellite + PHP PDO + SQLite / MySQL Dual-Mode)
 
 ---
 
 ## 1. Identitas & Deskripsi Aplikasi
-**BahariGIS** adalah aplikasi sistem informasi geografis berbasis web yang dirancang untuk memetakan persebaran objek wisata bahari (pantai pasir putih, pulau eksotis, spot snorkeling, spot diving/terumbu karang, dan kawasan konservasi mangrove/penyu) di seluruh perairan Indonesia. 
+**SIG Wisata Madura Pantai Jumiang** adalah aplikasi sistem informasi geografis berbasis web yang dirancang untuk memetakan persebaran objek wisata, spot daya tarik panorama alam (tebing karang, pantai pasir putih, hutan cemara udang pesisir), wahana foto sunset, sentra kuliner rujak petis Madura, serta fasilitas publik di kawasan **Wisata Pantai Jumiang, Desa Tanjung, Kecamatan Pademawu, Kabupaten Pamekasan, Pulau Madura, Jawa Timur**. 
 
 ### Tujuan Aplikasi:
-1. **Memudahkan Wisatawan**: Menemukan lokasi wisata bahari melalui peta digital interaktif berskala nasional.
-2. **Menyediakan Informasi Terpadu**: Menyajikan deskripsi keindahan bahari, daya tarik, tiket masuk, jam operasional, dan fasilitas pendukung.
-3. **Analisis Persebaran Spasial**: Menampilkan visualisasi persebaran geografis titik objek wisata laut.
-4. **Membantu Pengelola & Dinas**: Memperbarui informasi objek wisata secara mandiri melalui panel dashboard admin tanpa perlu koding ulang.
-5. **Mendukung Promosi & Konservasi**: Mendorong sektor ekowisata bahari dan pelestarian biota laut.
+1. **Memudahkan Wisatawan**: Menemukan lokasi spot-spot menarik dan fasilitas di kawasan Pantai Jumiang melalui peta digital interaktif.
+2. **Menyediakan Informasi Terpadu**: Menyajikan deskripsi keindahan tebing karang, daya tarik pasir putih, tiket masuk kawasan, jam operasional, dan fasilitas pendukung.
+3. **Analisis Persebaran Spasial**: Menampilkan visualisasi persebaran geografis titik objek daya tarik dan delimitasi kawasan wisata.
+4. **Membantu Pengelola & Pokdarwis**: Memperbarui informasi objek wisata, fasilitas, dan dokumentasi foto secara mandiri melalui panel dashboard admin tanpa perlu koding ulang.
+5. **Mendukung Promosi Pariwisata Madura**: Mendorong sektor pariwisata daerah Kabupaten Pamekasan dan Pulau Madura.
 
 ### Target Pengguna:
-- **Wisatawan**: Domestik maupun mancanegara yang mencari destinasi wisata bahari.
-- **Pengelola Objek Wisata**: Meninjau status fasilitas dan data destinasi.
-- **Administrator / Dinas Pariwisata**: Mengelola titik koordinat, foto, dan master kategori.
+- **Wisatawan**: Pengunjung yang mencari lokasi spot tebing, pantai, kuliner, tiket, dan rute navigasi ke Pantai Jumiang.
+- **Pengelola Objek Wisata (Pokdarwis Desa Tanjung)**: Meninjau status fasilitas dan data objek wisata.
+- **Administrator / Dinas Pariwisata Pamekasan**: Mengelola titik koordinat, foto, dan master kategori.
 
 ---
 

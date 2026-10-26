@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!pickerContainer || pickerMap) return;
 
         // Default center Pantai Jumiang Pamekasan Madura Jawa Timur
-        pickerMap = L.map('mapPicker').setView([-7.2335225, 113.5492742], 13);
+        pickerMap = L.map('mapPicker').setView([-7.2332, 113.5490], 16);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             attribution: '&copy; OpenStreetMap contributors',
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }).addTo(pickerMap);
 
         // Marker draggable untuk memilih koordinat
-        pickerMarker = L.marker([-7.2335225, 113.5492742], {
+        pickerMarker = L.marker([-7.2332, 113.5490], {
             draggable: true
         }).addTo(pickerMap);
 

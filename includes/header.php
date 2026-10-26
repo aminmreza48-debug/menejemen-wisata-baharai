@@ -11,12 +11,12 @@ $isLoggedIn = !empty($_SESSION['user_id']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= isset($pageTitle) ? htmlspecialchars($pageTitle) . ' — ' : '' ?>BahariGIS — Sistem Informasi Geografis Wisata Bahari</title>
+    <title><?= isset($pageTitle) ? htmlspecialchars($pageTitle) . ' — ' : '' ?>Wisata Madura Pantai Jumiang | Web GIS Spasial</title>
     
     <!-- Meta SEO -->
-    <meta name="description" content="BahariGIS adalah sistem informasi geografis interaktif berbasis web untuk eksplorasi destinasi wisata bahari, pantai, pulau eksotis, spot snorkeling, dan diving di Indonesia.">
-    <meta name="keywords" content="baharigis, webgis, wisata bahari, peta pantai, leaflet js, openstreetmap, gis kelautan">
-    <meta name="author" content="Tim Manajemen Web GIS">
+    <meta name="description" content="Sistem Informasi Geografis Web (WebGIS) Wisata Madura Pantai Jumiang — Pemetaan spasial interaktif objek wisata tebing karang, pantai pasir putih, hutan cemara, kuliner khas rujak petis, dan fasilitas di Desa Tanjung, Pademawu, Pamekasan, Madura.">
+    <meta name="keywords" content="wisata pantai jumiang, pantai jumiang madura, pamekasan madura, webgis jumiang, peta pantai jumiang, gis wisata madura, leaflet js">
+    <meta name="author" content="Tim Manajemen Web GIS — Wisata Pantai Jumiang Madura">
 
     <!-- Bootstrap 5.3 & Icons CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -30,14 +30,17 @@ $isLoggedIn = !empty($_SESSION['user_id']);
 </head>
 <body>
 
-<!-- Navbar Bahari -->
+<!-- Navbar Wisata Madura Pantai Jumiang -->
 <nav class="navbar navbar-expand-lg navbar-bahari sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
             <span class="brand-icon">
-                <i class="bi bi-water"></i>
+                <i class="bi bi-geo-alt-fill text-info"></i>
             </span>
-            <span>Bahari<span class="text-ocean-accent">GIS</span></span>
+            <div class="d-flex flex-column lh-1">
+                <span class="fw-bold fs-5">Pantai<span class="text-ocean-accent">Jumiang</span></span>
+                <small class="text-white-50" style="font-size: 0.72rem; letter-spacing: 0.5px;">WISATA MADURA GIS</small>
+            </div>
         </a>
 
         <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
