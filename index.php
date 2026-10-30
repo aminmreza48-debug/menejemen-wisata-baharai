@@ -31,7 +31,7 @@ include __DIR__ . '/includes/header.php';
 <!-- Hero Banner -->
 <section class="hero-bahari text-center">
     <div class="container position-relative" style="z-index: 2;">
-        <span class="badge bg-info bg-opacity-25 text-white border border-info border-opacity-50 px-3 py-2 rounded-pill mb-3">
+        <span class="badge hero-badge-pill text-white border px-3 py-2 rounded-pill mb-3">
             <i class="bi bi-geo-alt-fill me-1 text-warning"></i> Kawasan Wisata Pantai Jumiang — Desa Tanjung, Pademawu, Pamekasan, Madura
         </span>
         <h1 class="hero-title">Wisata Madura: Pantai Jumiang Pamekasan</h1>
@@ -45,6 +45,9 @@ include __DIR__ . '/includes/header.php';
             <a href="daftar-wisata.php" class="btn btn-outline-light rounded-pill px-4 py-2 fw-semibold">
                 <i class="bi bi-grid-fill me-1"></i> Katalog Spot & Fasilitas
             </a>
+            <button type="button" class="btn btn-warning rounded-pill px-4 py-2 fw-semibold text-dark shadow" data-bs-toggle="modal" data-bs-target="#modalInfoTiket">
+                <i class="bi bi-ticket-perforated-fill me-1"></i> Info Tiket: Rp 5.000
+            </button>
         </div>
     </div>
 </section>

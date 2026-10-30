@@ -242,7 +242,7 @@ class Database {
 
         // Seed Foto Wisata
         $pdo->exec("INSERT INTO foto_wisata (id_foto, id_wisata, nama_file, keterangan) VALUES
-            (1, 1, 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80', 'Panorama Tebing Karang Jumiang Atas Menghadap Selat Madura'),
+            (1, 1, 'assets/img/pantai_jumiang_hero.jpg', 'Panorama Tebing Karang Jumiang Atas Menghadap Selat Madura'),
             (2, 1, 'https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=1200&q=80', 'Pemandangan Ombak Menghempas Tebing Karang Alami'),
             (3, 2, 'https://images.unsplash.com/photo-1509233725247-49e657c54213?auto=format&fit=crop&w=1200&q=80', 'Hamparan Pasir Putih dan Perairan Tenang Jumiang Bawah'),
             (4, 2, 'https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=1200&q=80', 'Pesisir Pantai Landai Cocok untuk Rekreasi Keluarga'),

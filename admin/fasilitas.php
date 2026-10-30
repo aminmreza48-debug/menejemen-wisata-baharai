@@ -27,7 +27,41 @@ include __DIR__ . '/../includes/admin_header.php';
 </div>
 
 <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
-    <div class="table-responsive">
+    <!-- Tampilan Khusus Mobile: List Card Rapi (d-md-none) -->
+    <div class="d-md-none p-3">
+        <?php if (empty($fasilitasList)): ?>
+            <div class="text-center py-4 text-muted small">Belum ada master fasilitas.</div>
+        <?php else: ?>
+            <div class="d-flex flex-column gap-2">
+                <?php foreach ($fasilitasList as $f): ?>
+                    <div class="p-3 bg-light bg-opacity-50 rounded-3 border">
+                        <div class="d-flex justify-content-between align-items-start gap-2 mb-1">
+                            <div class="fw-bold text-ocean-primary">
+                                <i class="bi bi-check2-circle text-success me-1"></i> <?= htmlspecialchars($f['nama_fasilitas']) ?>
+                            </div>
+                            <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25" style="font-size: 0.70rem;">
+                                <?= $f['total_wisata'] ?> Wisata
+                            </span>
+                        </div>
+                        <?php if ($f['deskripsi']): ?>
+                            <small class="text-muted d-block mb-2" style="font-size: 0.78rem;"><?= htmlspecialchars($f['deskripsi']) ?></small>
+                        <?php endif; ?>
+                        <div class="d-flex justify-content-end gap-1 pt-2 border-top">
+                            <button type="button" onclick="window.editFasilitas(<?= $f['id_fasilitas'] ?>, '<?= htmlspecialchars(addslashes($f['nama_fasilitas'])) ?>', '<?= htmlspecialchars(addslashes($f['deskripsi'] ?? '')) ?>')" class="btn btn-sm btn-outline-primary rounded-pill px-2 py-1" style="font-size: 0.75rem;">
+                                <i class="bi bi-pencil-square me-1"></i> Edit
+                            </button>
+                            <button type="button" onclick="window.deleteFasilitas(<?= $f['id_fasilitas'] ?>, '<?= htmlspecialchars(addslashes($f['nama_fasilitas'])) ?>')" class="btn btn-sm btn-outline-danger rounded-pill px-2 py-1" style="font-size: 0.75rem;">
+                                <i class="bi bi-trash me-1"></i> Hapus
+                            </button>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <!-- Tampilan Desktop: Tabel Lengkap (d-none d-md-block) -->
+    <div class="table-responsive d-none d-md-block">
         <table class="table table-hover align-middle mb-0">
             <thead class="table-light">
                 <tr>

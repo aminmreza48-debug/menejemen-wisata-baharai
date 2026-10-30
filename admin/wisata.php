@@ -53,12 +53,12 @@ include __DIR__ . '/../includes/admin_header.php';
 ?>
 
 <!-- Header & Action Button -->
-<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+<div class="d-flex justify-content-between align-items-sm-center flex-column flex-sm-row mb-3 mb-md-4 gap-2">
     <div>
-        <h3 class="font-serif fw-bold text-ocean-primary mb-1">Manajemen Data Wisata Bahari</h3>
-        <p class="text-muted small mb-0">Tambah, ubah, perbarui koordinat peta, dan kelola foto maupun fasilitas (KF-08).</p>
+        <h3 class="font-serif fw-bold text-ocean-primary mb-1 admin-welcome-title">Kelola Data Wisata Bahari</h3>
+        <p class="text-muted small mb-0 admin-welcome-sub">Kelola koordinat GPS, detail info, foto, & fasilitas.</p>
     </div>
-    <button type="button" class="btn btn-primary rounded-pill px-4 shadow-sm" onclick="window.openAddWisataModal()">
+    <button type="button" class="btn btn-primary rounded-pill px-3 btn-sm shadow-sm align-self-start align-self-sm-auto" onclick="window.openAddWisataModal()">
         <i class="bi bi-plus-lg me-1"></i> Tambah Wisata Baru
     </button>
 </div>
@@ -98,9 +98,45 @@ include __DIR__ . '/../includes/admin_header.php';
     </form>
 </div>
 
-<!-- Table Data Wisata -->
-<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
-    <div class="table-responsive">
+<!-- Table Data Wisata (Responsive: Card List di Mobile, Tabel Lengkap di Desktop) -->
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
+    <!-- Tampilan Khusus Mobile (d-md-none) -->
+    <div class="d-md-none p-3">
+        <?php if (empty($wisataList)): ?>
+            <div class="text-center py-4 text-muted small">Tidak ada data wisata bahari yang ditemukan.</div>
+        <?php else: ?>
+            <div class="d-flex flex-column gap-2">
+                <?php foreach ($wisataList as $idx => $w): ?>
+                    <div class="card border rounded-3 p-3 shadow-none bg-light bg-opacity-25">
+                        <div class="d-flex justify-content-between align-items-start gap-2 mb-1">
+                            <div class="fw-bold text-dark" style="font-size: 0.95rem;"><?= htmlspecialchars($w['nama_wisata']) ?></div>
+                            <span class="badge <?= $w['status'] === 'aktif' ? 'bg-success bg-opacity-10 text-success' : ($w['status'] === 'draft' ? 'bg-warning bg-opacity-10 text-warning' : 'bg-secondary') ?> flex-shrink-0" style="font-size: 0.70rem;">
+                                <?= htmlspecialchars(ucfirst($w['status'])) ?>
+                            </span>
+                        </div>
+                        <small class="text-muted d-block mb-2" style="font-size: 0.76rem;"><i class="bi bi-geo-alt me-1 text-danger"></i><?= htmlspecialchars($w['alamat']) ?></small>
+                        <div class="d-flex align-items-center justify-content-between pt-2 border-top flex-wrap gap-2">
+                            <div class="d-flex align-items-center gap-1 flex-wrap">
+                                <span class="badge bg-light text-dark border" style="font-size: 0.68rem;"><?= htmlspecialchars($w['nama_kategori']) ?></span>
+                                <span class="fw-semibold text-success small" style="font-size: 0.78rem;"><?= formatRupiah((float)$w['harga_tiket']) ?></span>
+                            </div>
+                            <div class="d-flex gap-1">
+                                <button type="button" onclick="window.editWisata(<?= $w['id_wisata'] ?>)" class="btn btn-sm btn-outline-primary rounded-pill px-2 py-1" style="font-size: 0.75rem;" title="Edit">
+                                    <i class="bi bi-pencil-square me-1"></i> Edit
+                                </button>
+                                <button type="button" onclick="window.deleteWisata(<?= $w['id_wisata'] ?>, '<?= htmlspecialchars(addslashes($w['nama_wisata'])) ?>')" class="btn btn-sm btn-outline-danger rounded-pill px-2 py-1" style="font-size: 0.75rem;" title="Hapus">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <!-- Tampilan Desktop: Tabel Lengkap (d-none d-md-block) -->
+    <div class="table-responsive d-none d-md-block">
         <table class="table table-hover align-middle mb-0">
             <thead class="table-light">
                 <tr>

@@ -49,7 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Administrator — BahariGIS</title>
+    <title>Login Administrator — Wisata Pantai Jumiang</title>
+    <link rel="icon" type="image/jpeg" href="../assets/img/logo_pantai_jumiang.jpg">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../assets/css/style.css">
@@ -59,25 +60,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, rgba(4, 28, 50, 0.94), rgba(15, 76, 129, 0.88)),
-                        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-            padding: 20px;
+            background: 
+                linear-gradient(135deg, rgba(4, 28, 50, 0.65) 0%, rgba(8, 38, 66, 0.42) 50%, rgba(4, 28, 50, 0.78) 100%),
+                url('../assets/img/pantai_jumiang_hero.jpg') center center / cover no-repeat fixed;
+            padding: 24px 16px;
         }
         .login-card {
-            background: rgba(255, 255, 255, 0.94);
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.6);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
             border-radius: var(--radius-xl);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 25px 50px rgba(4, 28, 50, 0.35);
             width: 100%;
             max-width: 440px;
             overflow: hidden;
         }
         .login-header {
-            background: linear-gradient(135deg, var(--ocean-800), var(--ocean-600));
-            padding: 2.2rem 2rem;
+            position: relative;
+            background: 
+                linear-gradient(180deg, rgba(4, 28, 50, 0.85) 0%, rgba(15, 76, 129, 0.92) 100%),
+                url('../assets/img/pantai_jumiang_hero.jpg') center top / cover no-repeat;
+            padding: 2.2rem 2rem 1.8rem;
             color: #fff;
             text-align: center;
+        }
+        .login-logo {
+            width: 78px;
+            height: 78px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+            background: #ffffff;
+            transition: transform 0.25s ease;
+        }
+        .login-logo:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -85,11 +104,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <div class="login-card">
     <div class="login-header">
-        <div class="brand-icon mx-auto mb-3" style="width: 52px; height: 52px;">
-            <i class="bi bi-shield-lock-fill fs-3"></i>
-        </div>
-        <h4 class="font-serif fw-bold mb-1">Masuk Panel Admin</h4>
-        <p class="small text-white-50 mb-0">BahariGIS — Sistem Pengelolaan Data Spasial</p>
+        <img src="../assets/img/logo_pantai_jumiang.png" alt="Logo Wisata Pantai Jumiang" class="login-logo mx-auto mb-2 d-block">
+        <h4 class="font-serif fw-bold mb-1 text-white">Masuk Panel Admin</h4>
+        <p class="small text-white-50 mb-0 d-inline-flex align-items-center gap-1 bg-dark bg-opacity-25 px-3 py-1 rounded-pill" style="font-size: 0.78rem;">
+            <i class="bi bi-geo-alt-fill text-warning"></i> Pantai Jumiang — Pademawu, Pamekasan
+        </p>
     </div>
 
     <div class="p-4 p-md-5">

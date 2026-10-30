@@ -16,18 +16,48 @@ $kategoriList = $stmt->fetchAll();
 include __DIR__ . '/../includes/admin_header.php';
 ?>
 
-<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+<div class="d-flex justify-content-between align-items-sm-center flex-column flex-sm-row mb-3 mb-md-4 gap-2">
     <div>
-        <h3 class="font-serif fw-bold text-ocean-primary mb-1">Kategori Wisata Bahari</h3>
-        <p class="text-muted small mb-0">Kelola kelompok jenis wisata pantai, pulau, penyelaman, atau konservasi.</p>
+        <h3 class="font-serif fw-bold text-ocean-primary mb-1 admin-welcome-title">Kategori Wisata Bahari</h3>
+        <p class="text-muted small mb-0 admin-welcome-sub">Kelola zona dan jenis kegiatan di kawasan Pantai Jumiang.</p>
     </div>
-    <button type="button" class="btn btn-primary rounded-pill px-4 shadow-sm" onclick="window.openAddKategoriModal()">
+    <button type="button" class="btn btn-primary rounded-pill px-3 btn-sm shadow-sm align-self-start align-self-sm-auto" onclick="window.openAddKategoriModal()">
         <i class="bi bi-plus-lg me-1"></i> Tambah Kategori
     </button>
 </div>
 
-<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
-    <div class="table-responsive">
+<div class="card border-0 shadow-sm rounded-4 overflow-hidden mb-4">
+    <!-- Tampilan Khusus Mobile (d-md-none) -->
+    <div class="d-md-none p-3">
+        <?php if (empty($kategoriList)): ?>
+            <div class="text-center py-4 text-muted small">Belum ada data kategori.</div>
+        <?php else: ?>
+            <div class="d-flex flex-column gap-2">
+                <?php foreach ($kategoriList as $k): ?>
+                    <div class="p-3 bg-light bg-opacity-25 rounded-3 border d-flex justify-content-between align-items-center gap-2">
+                        <div>
+                            <div class="fw-bold text-ocean-primary small mb-1"><?= htmlspecialchars($k['nama_kategori']) ?></div>
+                            <small class="text-muted d-block mb-1" style="font-size: 0.75rem;"><?= htmlspecialchars($k['deskripsi'] ?: 'Tanpa deskripsi') ?></small>
+                            <span class="badge bg-primary bg-opacity-10 text-primary border border-primary border-opacity-25" style="font-size: 0.65rem;">
+                                <?= $k['total_wisata'] ?> Destinasi
+                            </span>
+                        </div>
+                        <div class="d-flex gap-1 flex-shrink-0">
+                            <button type="button" onclick="window.editKategori(<?= $k['id_kategori'] ?>, '<?= htmlspecialchars(addslashes($k['nama_kategori'])) ?>', '<?= htmlspecialchars(addslashes($k['deskripsi'] ?? '')) ?>')" class="btn btn-sm btn-outline-primary rounded-circle d-flex align-items-center justify-content-center p-0" style="width: 32px; height: 32px;">
+                                <i class="bi bi-pencil-square"></i>
+                            </button>
+                            <button type="button" onclick="window.deleteKategori(<?= $k['id_kategori'] ?>, '<?= htmlspecialchars(addslashes($k['nama_kategori'])) ?>')" class="btn btn-sm btn-outline-danger rounded-circle d-flex align-items-center justify-content-center p-0" style="width: 32px; height: 32px;">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endif; ?>
+    </div>
+
+    <!-- Tampilan Desktop: Tabel Lengkap (d-none d-md-block) -->
+    <div class="table-responsive d-none d-md-block">
         <table class="table table-hover align-middle mb-0">
             <thead class="table-light">
                 <tr>

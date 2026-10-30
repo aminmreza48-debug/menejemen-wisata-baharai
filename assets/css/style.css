@@ -110,6 +110,35 @@ h1, h2, h3, .font-serif {
   box-shadow: 0 4px 12px rgba(0, 119, 182, 0.28);
 }
 
+.brand-logo-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 3px 10px rgba(4, 28, 50, 0.16);
+  border: 2px solid #ffffff;
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.navbar-brand:hover .brand-logo-img {
+  transform: scale(1.06);
+}
+
+.brand-title-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--ocean-800);
+  letter-spacing: -0.3px;
+}
+
+.brand-location-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #475569;
+  letter-spacing: 0.2px;
+}
+
 .navbar-bahari .nav-link {
   font-weight: 600;
   color: var(--ocean-800);
@@ -137,14 +166,20 @@ h1, h2, h3, .font-serif {
 }
 
 /* -------------------------------------------------------------
-   Hero Banner Section
+   Hero Banner Section (Vibes Pantai Jumiang Pamekasan)
    ------------------------------------------------------------- */
 .hero-bahari {
   position: relative;
-  background: linear-gradient(135deg, rgba(4, 28, 50, 0.88), rgba(15, 76, 129, 0.82)),
-              url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
+  background: 
+    linear-gradient(180deg, 
+      rgba(4, 28, 50, 0.72) 0%, 
+      rgba(8, 38, 66, 0.38) 35%, 
+      rgba(4, 28, 50, 0.68) 75%,
+      rgba(4, 28, 50, 0.94) 100%
+    ),
+    url('../img/pantai_jumiang_hero.jpg') center 30% / cover no-repeat;
   color: #fff;
-  padding: 4.5rem 0 3.5rem;
+  padding: 4.8rem 0 3.8rem;
   overflow: hidden;
 }
 
@@ -159,18 +194,37 @@ h1, h2, h3, .font-serif {
   clip-path: ellipse(55% 100% at 50% 100%);
 }
 
+.hero-badge-pill {
+  white-space: normal !important;
+  display: inline-block !important;
+  max-width: 96%;
+  line-height: 1.45;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(14, 165, 233, 0.25) !important;
+  border-color: rgba(56, 189, 248, 0.45) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
 .hero-title {
-  font-size: 2.8rem;
-  font-weight: 700;
-  line-height: 1.15;
+  font-family: var(--font-heading);
+  font-size: 2.85rem;
+  font-weight: 800;
+  line-height: 1.18;
   margin-bottom: 1rem;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.75), 0 1px 3px rgba(4, 28, 50, 0.9);
+  letter-spacing: -0.5px;
 }
 
 .hero-subtitle {
   font-size: 1.15rem;
-  color: rgba(255, 255, 255, 0.88);
-  max-width: 680px;
+  color: rgba(255, 255, 255, 0.96);
+  max-width: 720px;
   margin: 0 auto 2rem;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(4, 28, 50, 0.9);
+  line-height: 1.65;
 }
 
 /* -------------------------------------------------------------
@@ -765,16 +819,74 @@ h1, h2, h3, .font-serif {
 }
 
 @media (max-width: 768px) {
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+  }
+  .brand-logo-img {
+    width: 38px;
+    height: 38px;
+  }
+  .brand-title-text {
+    font-size: 1.12rem;
+  }
+  .brand-location-text {
+    font-size: 0.68rem;
+  }
   .mobile-bottom-nav {
     display: flex;
   }
   body {
-    padding-bottom: 70px;
+    padding-bottom: 75px;
   }
-  #mapWisata {
-    height: 420px;
+  .hero-bahari {
+    padding: 3rem 0.75rem 2.6rem;
   }
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.85rem;
+    line-height: 1.25;
+    margin-bottom: 0.85rem;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.6rem;
+    max-width: 100%;
+  }
+  .hero-badge-pill {
+    font-size: 0.78rem !important;
+    padding: 0.45rem 0.85rem !important;
+    max-width: 98% !important;
+    white-space: normal !important;
+    display: inline-block !important;
+  }
+  .hero-bahari .btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.88rem;
+    width: 100%;
+    max-width: 320px;
+  }
+  .search-box-card {
+    margin-top: -1.8rem;
+    padding: 1rem 0.85rem;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+  .category-pills-container {
+    padding: 4px 0;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .category-pill {
+    font-size: 0.82rem;
+    padding: 0.38rem 0.85rem;
+  }
+  #mapWisata {
+    height: 380px;
+  }
+  .card-wisata-img-wrapper {
+    height: 190px;
   }
 }

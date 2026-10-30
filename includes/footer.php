@@ -8,8 +8,12 @@
     <div class="container">
         <div class="row gy-4">
             <div class="col-lg-4 col-md-6">
-                <div class="footer-brand">
-                    <i class="bi bi-geo-alt-fill me-2 text-info"></i>Pantai<span class="text-info">Jumiang</span> <small class="text-white-50 fs-6">GIS</small>
+                <div class="footer-brand d-flex align-items-center gap-2">
+                    <img src="assets/img/logo_pantai_jumiang.jpg" alt="Logo Wisata Pantai Jumiang" class="brand-logo-img">
+                    <div class="d-flex flex-column">
+                        <span class="fs-4 fw-bold text-white lh-1">Pantai<span class="text-info">Jumiang</span></span>
+                        <small class="text-white-50 mt-1" style="font-size: 0.72rem;"><i class="bi bi-geo-alt-fill text-warning me-1"></i>Pademawu, Pamekasan, Madura</small>
+                    </div>
                 </div>
                 <p class="text-secondary small" style="line-height: 1.8;">
                     Sistem Informasi Geografis Wisata Madura Pantai Jumiang interaktif berbasis web untuk memetakan panorama tebing karang, pantai pasir putih, hutan cemara, kuliner rujak petis Madura, dan fasilitas di Desa Tanjung, Pademawu, Pamekasan.
@@ -74,6 +78,96 @@
             </div>
             <div class="modal-body p-4" id="detailWisataContent">
                 <!-- Konten dinamis dimuat via app.js -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Informasi Tiket Masuk & Retribusi Kawasan Pantai Jumiang -->
+<div class="modal fade" id="modalInfoTiket" tabindex="-1" aria-labelledby="modalInfoTiketLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+            <div class="modal-header bg-ocean-gradient text-white border-0 py-3">
+                <h5 class="modal-title font-serif d-flex align-items-center gap-2" id="modalInfoTiketLabel">
+                    <i class="bi bi-ticket-perforated-fill text-warning"></i> Rincian Harga Tiket & Tarif Pantai Jumiang
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-4">
+                <div class="alert alert-info border-0 rounded-3 d-flex align-items-center gap-3 mb-3">
+                    <i class="bi bi-info-circle-fill fs-3 text-primary"></i>
+                    <div class="small">
+                        <strong>Tiket Masuk Kawasan Resmi:</strong> Hanya <strong>Rp 5.000 / orang</strong>, sudah mencakup akses ke area <strong>Jumiang Atas</strong> (tebing karang) dan <strong>Jumiang Bawah</strong> (pantai pasir putih).
+                    </div>
+                </div>
+
+                <h6 class="fw-bold text-ocean-primary mb-2"><i class="bi bi-card-checklist me-1"></i> Rincian Tarif & Layanan:</h6>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover align-middle mb-3 small">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Kategori / Layanan</th>
+                                <th class="text-end">Tarif</th>
+                                <th>Keterangan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tiket Masuk Utama</strong></td>
+                                <td class="text-end text-success fw-bold">Rp 5.000</td>
+                                <td>Per orang (Pokdarwis Desa Tanjung)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Parkir Sepeda Motor</strong></td>
+                                <td class="text-end text-primary fw-bold">Rp 3.000</td>
+                                <td>Lahan parkir teduh & aman</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Parkir Mobil Pribadi</strong></td>
+                                <td class="text-end text-primary fw-bold">Rp 5.000</td>
+                                <td>Lahan parkir roda empat</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Parkir Minibus / Bus</strong></td>
+                                <td class="text-end text-primary fw-bold">Rp 10.000 - Rp 15.000</td>
+                                <td>Rombongan wisatawan</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Kamar Bilas / Toilet</strong></td>
+                                <td class="text-end text-secondary fw-bold">Rp 2.000</td>
+                                <td>Bilas air tawar setelah renang</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Wahana Banana Boat</strong></td>
+                                <td class="text-end text-danger fw-bold">Rp 30.000</td>
+                                <td>Per orang (keliling teluk pesisir)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sewa Perahu Tradisional</strong></td>
+                                <td class="text-end text-danger fw-bold">Rp 20.000</td>
+                                <td>Per orang (tur tebing dari laut)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Spot Sunset & Ayunan Tebing</strong></td>
+                                <td class="text-end text-success fw-bold">Gratis</td>
+                                <td>Termasuk tiket masuk kawasan</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Gazebo Santai & Mushola</strong></td>
+                                <td class="text-end text-success fw-bold">Gratis</td>
+                                <td>Bebas untuk istirahat & ibadah</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="p-3 bg-light rounded-3 text-muted small">
+                    <i class="bi bi-clock-fill text-primary me-1"></i> <strong>Jam Operasional:</strong> Setiap hari pukul <strong>06:00 - 17:30 WIB</strong>.
+                </div>
+            </div>
+            <div class="modal-footer border-0 bg-light py-2 px-4">
+                <button type="button" class="btn btn-secondary rounded-pill px-4 btn-sm" data-bs-dismiss="modal">Tutup</button>
+                <a href="index.php#sectionPeta" class="btn btn-primary rounded-pill px-4 btn-sm" data-bs-dismiss="modal">Buka Peta Lokasi</a>
             </div>
         </div>
     </div>

@@ -27,30 +27,32 @@ include __DIR__ . '/../includes/admin_header.php';
 ?>
 
 <!-- Sambutan & Tombol Cepat -->
-<div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+<div class="d-flex justify-content-between align-items-sm-center flex-column flex-sm-row mb-3 mb-md-4 gap-2">
     <div>
-        <h3 class="font-serif fw-bold text-ocean-primary mb-1">Selamat Datang, <?= htmlspecialchars($userName) ?>!</h3>
-        <p class="text-muted small mb-0">Kelola titik koordinat spasial, fasilitas, dan galeri kawasan Wisata Pantai Jumiang Madura.</p>
+        <h3 class="font-serif fw-bold text-ocean-primary mb-1 admin-welcome-title">Selamat Datang, <?= htmlspecialchars($userName) ?>! 👋</h3>
+        <p class="text-muted small mb-0 admin-welcome-sub">Kelola koordinat, fasilitas, & galeri Wisata Pantai Jumiang.</p>
     </div>
-    <div class="d-flex gap-2">
-        <a href="wisata.php" class="btn btn-primary rounded-pill px-3 shadow-sm">
-            <i class="bi bi-plus-circle me-1"></i> Kelola Wisata
+    <div class="d-flex gap-2 mt-1 mt-sm-0">
+        <a href="wisata.php" class="btn btn-primary rounded-pill px-3 btn-sm shadow-sm flex-fill flex-sm-grow-0 text-center">
+            <i class="bi bi-plus-circle me-1"></i> Tambah Wisata
         </a>
-        <a href="../index.php" target="_blank" class="btn btn-outline-secondary rounded-pill px-3">
-            <i class="bi bi-eye me-1"></i> Tinjau Publik
+        <a href="../index.php" target="_blank" class="btn btn-outline-secondary rounded-pill px-3 btn-sm flex-fill flex-sm-grow-0 text-center">
+            <i class="bi bi-eye me-1"></i> Web Publik
         </a>
     </div>
 </div>
 
-<!-- KPI Stat Cards -->
-<div class="row g-3 mb-4">
-    <div class="col-sm-6 col-xl-3">
+<!-- KPI Stat Cards (2x2 Grid di HP, 4 Kolom di Desktop) -->
+<div class="row g-2 g-md-3 mb-3 mb-md-4">
+    <div class="col-6 col-xl-3">
         <div class="stat-card">
             <div>
-                <small class="text-muted fw-bold text-uppercase" style="font-size: 0.72rem;">Total Spot & Fasilitas</small>
-                <h3 class="fw-bold text-ocean-primary my-1"><?= $totalWisata ?></h3>
-                <span class="badge bg-success bg-opacity-10 text-success small"><?= $totalAktif ?> Aktif</span>
-                <span class="badge bg-warning bg-opacity-10 text-warning small"><?= $totalDraft ?> Draft</span>
+                <small class="stat-label">TOTAL SPOT</small>
+                <h3 class="stat-value"><?= $totalWisata ?></h3>
+                <div class="stat-badge-wrap d-flex flex-wrap gap-1">
+                    <span class="badge bg-success bg-opacity-10 text-success"><?= $totalAktif ?> Aktif</span>
+                    <span class="badge bg-warning bg-opacity-10 text-warning"><?= $totalDraft ?> Draft</span>
+                </div>
             </div>
             <div class="stat-icon bg-primary bg-opacity-10 text-primary">
                 <i class="bi bi-pin-map-fill"></i>
@@ -58,12 +60,12 @@ include __DIR__ . '/../includes/admin_header.php';
         </div>
     </div>
 
-    <div class="col-sm-6 col-xl-3">
+    <div class="col-6 col-xl-3">
         <div class="stat-card">
             <div>
-                <small class="text-muted fw-bold text-uppercase" style="font-size: 0.72rem;">Kategori Wisata</small>
-                <h3 class="fw-bold text-ocean-primary my-1"><?= $totalKategori ?></h3>
-                <small class="text-muted">Jenis kegiatan bahari</small>
+                <small class="stat-label">KATEGORI</small>
+                <h3 class="stat-value"><?= $totalKategori ?></h3>
+                <small class="text-muted stat-sub">Jenis kegiatan</small>
             </div>
             <div class="stat-icon bg-info bg-opacity-10 text-info">
                 <i class="bi bi-tags-fill"></i>
@@ -71,12 +73,12 @@ include __DIR__ . '/../includes/admin_header.php';
         </div>
     </div>
 
-    <div class="col-sm-6 col-xl-3">
+    <div class="col-6 col-xl-3">
         <div class="stat-card">
             <div>
-                <small class="text-muted fw-bold text-uppercase" style="font-size: 0.72rem;">Master Fasilitas</small>
-                <h3 class="fw-bold text-ocean-primary my-1"><?= $totalFasilitas ?></h3>
-                <small class="text-muted">Fasilitas terdaftar</small>
+                <small class="stat-label">FASILITAS</small>
+                <h3 class="stat-value"><?= $totalFasilitas ?></h3>
+                <small class="text-muted stat-sub">Sarana umum</small>
             </div>
             <div class="stat-icon bg-success bg-opacity-10 text-success">
                 <i class="bi bi-box-seam"></i>
@@ -84,12 +86,12 @@ include __DIR__ . '/../includes/admin_header.php';
         </div>
     </div>
 
-    <div class="col-sm-6 col-xl-3">
+    <div class="col-6 col-xl-3">
         <div class="stat-card">
             <div>
-                <small class="text-muted fw-bold text-uppercase" style="font-size: 0.72rem;">Galeri Foto</small>
-                <h3 class="fw-bold text-ocean-primary my-1"><?= $totalFoto ?></h3>
-                <small class="text-muted">Dokumentasi tersimpan</small>
+                <small class="stat-label">GALERI FOTO</small>
+                <h3 class="stat-value"><?= $totalFoto ?></h3>
+                <small class="text-muted stat-sub">Dokumentasi</small>
             </div>
             <div class="stat-icon bg-warning bg-opacity-10 text-warning">
                 <i class="bi bi-images"></i>
@@ -99,31 +101,64 @@ include __DIR__ . '/../includes/admin_header.php';
 </div>
 
 <!-- Peta Sebaran Admin & Tabel Data Terbaru -->
-<div class="row g-4 mb-4">
+<div class="row g-3 g-md-4 mb-4">
     <!-- Peta Ringkasan Admin -->
     <div class="col-lg-6">
-        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h6 class="fw-bold text-ocean-primary mb-0">
-                    <i class="bi bi-map me-1"></i> Persebaran Spasial Wisata Terdaftar
+        <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 h-100">
+            <div class="d-flex justify-content-between align-items-center mb-2 mb-md-3">
+                <h6 class="fw-bold text-ocean-primary mb-0 small">
+                    <i class="bi bi-map me-1 text-danger"></i> Persebaran Spasial Terdaftar
                 </h6>
                 <span class="badge bg-light text-dark border small"><?= $totalWisata ?> Titik</span>
             </div>
-            <div id="adminOverviewMap" style="height: 380px; border-radius: 12px; overflow: hidden; border: 1px solid #cbd5e1;"></div>
+            <div id="adminOverviewMap" style="height: 260px; width: 100%; border-radius: 12px; overflow: hidden; border: 1px solid #cbd5e1;"></div>
         </div>
     </div>
 
     <!-- Data Wisata Terbaru -->
     <div class="col-lg-6">
-        <div class="card border-0 shadow-sm rounded-4 p-4 h-100">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <h6 class="fw-bold text-ocean-primary mb-0">
-                    <i class="bi bi-clock-history me-1"></i> Destinasi Terbaru Ditambahkan
+        <div class="card border-0 shadow-sm rounded-4 p-3 p-md-4 h-100">
+            <div class="d-flex justify-content-between align-items-center mb-2 mb-md-3">
+                <h6 class="fw-bold text-ocean-primary mb-0 small">
+                    <i class="bi bi-clock-history me-1 text-primary"></i> Destinasi Terbaru Ditambahkan
                 </h6>
                 <a href="wisata.php" class="small text-decoration-none">Kelola Semua &raquo;</a>
             </div>
 
-            <div class="table-responsive">
+            <!-- Tampilan Khusus Mobile: List Card Rapi & Sederhana (d-md-none) -->
+            <div class="d-md-none">
+                <?php if (empty($recentWisata)): ?>
+                    <div class="text-center py-4 text-muted small">Belum ada data wisata.</div>
+                <?php else: ?>
+                    <div class="d-flex flex-column gap-2">
+                        <?php foreach ($recentWisata as $w): 
+                            $foto = $w['foto_utama'] ?: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=150&q=80';
+                            if (!preg_match('/^https?:\/\//i', $foto) && !str_starts_with($foto, '../')) {
+                                $foto = '../' . ltrim($foto, '/');
+                            }
+                        ?>
+                            <div class="p-2 bg-light bg-opacity-50 rounded-3 border d-flex align-items-center gap-2">
+                                <img src="<?= htmlspecialchars($foto) ?>" class="rounded-3 flex-shrink-0" style="width: 48px; height: 48px; object-fit: cover;" alt="Foto">
+                                <div class="flex-grow-1 min-w-0" style="overflow: hidden;">
+                                    <div class="fw-bold text-dark text-truncate small mb-1"><?= htmlspecialchars($w['nama_wisata']) ?></div>
+                                    <div class="d-flex align-items-center gap-1 flex-wrap">
+                                        <span class="badge bg-light text-dark border py-1 px-2" style="font-size: 0.65rem;"><?= htmlspecialchars($w['nama_kategori']) ?></span>
+                                        <span class="badge <?= $w['status'] === 'aktif' ? 'bg-success bg-opacity-10 text-success' : ($w['status'] === 'draft' ? 'bg-warning bg-opacity-10 text-warning' : 'bg-secondary') ?> py-1 px-2" style="font-size: 0.65rem;">
+                                            <?= htmlspecialchars(ucfirst($w['status'])) ?>
+                                        </span>
+                                    </div>
+                                </div>
+                                <a href="wisata.php?edit=<?= $w['id_wisata'] ?>" class="btn btn-sm btn-outline-primary rounded-circle d-flex align-items-center justify-content-center p-0 flex-shrink-0" style="width: 32px; height: 32px;" title="Edit">
+                                    <i class="bi bi-pencil-square"></i>
+                                </a>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+
+            <!-- Tampilan Desktop: Tabel Lengkap (d-none d-md-block) -->
+            <div class="table-responsive d-none d-md-block">
                 <table class="table table-hover align-middle small mb-0">
                     <thead class="table-light">
                         <tr>
@@ -141,6 +176,9 @@ include __DIR__ . '/../includes/admin_header.php';
                         <?php else: ?>
                             <?php foreach ($recentWisata as $w): 
                                 $foto = $w['foto_utama'] ?: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=150&q=80';
+                                if (!preg_match('/^https?:\/\//i', $foto) && !str_starts_with($foto, '../')) {
+                                    $foto = '../' . ltrim($foto, '/');
+                                }
                             ?>
                                 <tr>
                                     <td>

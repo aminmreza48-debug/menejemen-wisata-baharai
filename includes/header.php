@@ -25,6 +25,9 @@ $isLoggedIn = !empty($_SESSION['user_id']);
     <!-- Leaflet CSS 1.9.4 -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
 
+    <!-- Favicon Pantai Jumiang -->
+    <link rel="icon" type="image/jpeg" href="assets/img/logo_pantai_jumiang.jpg">
+
     <!-- Custom Oceanic Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
@@ -34,12 +37,12 @@ $isLoggedIn = !empty($_SESSION['user_id']);
 <nav class="navbar navbar-expand-lg navbar-bahari sticky-top">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center gap-2" href="index.php">
-            <span class="brand-icon">
-                <i class="bi bi-geo-alt-fill text-info"></i>
-            </span>
-            <div class="d-flex flex-column lh-1">
-                <span class="fw-bold fs-5">Pantai<span class="text-ocean-accent">Jumiang</span></span>
-                <small class="text-white-50" style="font-size: 0.72rem; letter-spacing: 0.5px;">WISATA MADURA GIS</small>
+            <img src="assets/img/logo_pantai_jumiang.jpg" alt="Logo Wisata Pantai Jumiang" class="brand-logo-img">
+            <div class="d-flex flex-column justify-content-center">
+                <span class="brand-title-text lh-1">Pantai<span class="text-ocean-accent">Jumiang</span></span>
+                <span class="brand-location-text d-flex align-items-center gap-1 mt-1">
+                    <i class="bi bi-geo-alt-fill text-danger"></i> Pademawu, Pamekasan
+                </span>
             </div>
         </a>
 
