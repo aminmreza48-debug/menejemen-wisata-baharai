@@ -145,18 +145,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </button>
         </form>
 
-        <!-- Akun Demo Cepat Helper -->
-        <div class="p-3 bg-light rounded-3 border text-center small mb-3">
-            <div class="fw-bold text-ocean-primary mb-1">
-                <i class="bi bi-info-circle me-1"></i> Akun Pengujian Default:
-            </div>
-            <div class="text-muted">Email: <code>admin@baharigis.id</code></div>
-            <div class="text-muted">Password: <code>admin123</code></div>
-            <button type="button" class="btn btn-sm btn-outline-primary rounded-pill mt-2 py-1 px-3" onclick="fillDemoCredentials()">
-                Gunakan Akun Demo
-            </button>
-        </div>
-
         <div class="text-center">
             <a href="../index.php" class="text-decoration-none small text-muted">
                 <i class="bi bi-arrow-left me-1"></i> Kembali ke Beranda Publik
@@ -165,12 +153,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </div>
 </div>
 
-<script>
-function fillDemoCredentials() {
-    document.getElementById('inputEmail').value = 'admin@baharigis.id';
-    document.getElementById('inputPassword').value = 'admin123';
-}
-</script>
+
 
 </body>
 </html>

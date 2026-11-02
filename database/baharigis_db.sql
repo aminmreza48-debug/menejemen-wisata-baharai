@@ -92,10 +92,10 @@ CREATE TABLE `foto_wisata` (
 -- DATA AWAL (SEED DATA KHUSUS KAWASAN PANTAI JUMIANG MADURA)
 -- ==============================================================
 
--- 1. Users Default (Password default: 'admin123')
+-- 1. Users Default
 INSERT INTO `users` (`id_user`, `nama`, `email`, `password`, `role`, `created_at`) VALUES
-(1, 'Administrator JumiangGIS', 'admin@baharigis.id', '$2y$10$eE0m9Xj5KkUf5lqCjCfZ9.T8HlYf7lA6FvhM9C6uK/0oH05p1W.ey', 'admin', NOW()),
-(2, 'Pokdarwis Desa Tanjung', 'operator@baharigis.id', '$2y$10$eE0m9Xj5KkUf5lqCjCfZ9.T8HlYf7lA6FvhM9C6uK/0oH05p1W.ey', 'operator', NOW());
+(1, 'Administrator JumiangGIS', 'admin@baharigis.id', '$2y$10$FwH1dhkTN34WO.tDPfmncuwbKZr/uX4MKJrle2AbV7wX/NFjM1Tuy', 'admin', NOW()),
+(2, 'Pokdarwis Desa Tanjung', 'operator@baharigis.id', '$2y$10$FwH1dhkTN34WO.tDPfmncuwbKZr/uX4MKJrle2AbV7wX/NFjM1Tuy', 'operator', NOW());
 
 -- 2. Kategori Objek & Spot Kawasan Pantai Jumiang
 INSERT INTO `kategori_wisata` (`id_kategori`, `nama_kategori`, `deskripsi`) VALUES

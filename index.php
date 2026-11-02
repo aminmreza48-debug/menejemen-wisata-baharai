@@ -109,9 +109,17 @@ include __DIR__ . '/includes/header.php';
 
         <!-- Floating Controls Inside Map -->
         <div class="map-floating-overlay">
-            <button id="btnToggleSatellite" class="map-control-btn" title="Beralih Tampilan Satelit / Peta">
-                <i class="bi bi-layers"></i> Satelit
-            </button>
+            <div class="map-layer-toggle" role="group" aria-label="Pilihan Peta Dasar">
+                <button type="button" id="btnLayerSatellite" class="map-control-btn active" title="Tampilan Citra Satelit Hybrid">
+                    <i class="bi bi-globe-asia-australia"></i> Satelit
+                </button>
+                <button type="button" id="btnLayerStreet" class="map-control-btn" title="Tampilan Peta Jalan Standar">
+                    <i class="bi bi-map"></i> Peta Jalan
+                </button>
+            </div>
+            <!-- Tombol Kompatibilitas Legacy -->
+            <button id="btnToggleSatellite" class="d-none" aria-hidden="true"></button>
+
             <button id="btnLocateUser" class="map-control-btn" title="Deteksi Lokasi Anda Saat Ini">
                 <i class="bi bi-crosshair"></i> Lokasi Saya
             </button>
@@ -123,7 +131,7 @@ include __DIR__ . '/includes/header.php';
         <!-- Live Pulse Stats Indicator -->
         <div class="map-stats-badge">
             <div class="pulse-indicator"></div>
-            <span>Peta Kawasan Wisata Pantai Jumiang Aktif</span>
+            <span id="mapStatusText">Mode Citra Satelit Aktif — Kawasan Wisata Pantai Jumiang</span>
             <span id="mapLoadingIndicator" class="spinner-border spinner-border-sm text-primary ms-2" style="display: none;"></span>
         </div>
     </div>

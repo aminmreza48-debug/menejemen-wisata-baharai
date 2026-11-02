@@ -27,20 +27,28 @@ document.addEventListener('DOMContentLoaded', function () {
         // Kontrol Zoom di sudut kanan bawah
         L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-        // Tile Provider 1: OpenStreetMap Standard (Bebas Watermark & API Key)
+        // Tile Provider 1: Google Satellite Hybrid (Citra Satelit Resolusi Tinggi + Label Jalan/Tempat)
+        const satelliteHybrid = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+            attribution: '&copy; Citra Satelit Google Maps'
+        });
+
+        // Tile Provider 2: Esri World Imagery (Foto Satelit Alami)
+        const esriSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 19,
+            maxNativeZoom: 18,
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        });
+
+        // Tile Provider 3: OpenStreetMap Standard (Peta Vektor / Jalan)
         const osmStandard = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         });
 
-        // Tile Provider 2: Esri World Imagery (Satelit Presisi Tinggi)
-        const esriSatellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-            maxZoom: 18,
-            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-        });
-
-        // Default pakai OpenStreetMap Standard
-        osmStandard.addTo(map);
+        // DEFAULT: Tampilkan Peta Satelit Langsung Saat Website Dibuka
+        satelliteHybrid.addTo(map);
 
         // Polygon Delimitasi Batas Kawasan Wisata Pantai Jumiang Madura
         const jumiangBoundary = L.polygon([
@@ -52,19 +60,20 @@ document.addEventListener('DOMContentLoaded', function () {
             [-7.2355, 113.5472],
             [-7.2332, 113.5460]
         ], {
-            color: '#0077b6',
-            weight: 2,
-            dashArray: '4, 6',
+            color: '#38bdf8',
+            weight: 2.5,
+            dashArray: '5, 5',
             fillColor: '#00b4d8',
-            fillOpacity: 0.10
+            fillOpacity: 0.15
         }).addTo(map);
         jumiangBoundary.bindTooltip('<b>Kawasan Wisata Pantai Jumiang</b><br><small>Desa Tanjung, Pademawu, Pamekasan, Madura</small>', {
             sticky: true
         });
 
         baseLayers = {
-            "Peta Standar (OSM)": osmStandard,
-            "Peta Satelit (Esri)": esriSatellite
+            "Peta Satelit (Hybrid)": satelliteHybrid,
+            "Peta Satelit (Esri)": esriSatellite,
+            "Peta Standar (OSM)": osmStandard
         };
 
         // Layer Group untuk Marker Wisata
@@ -80,20 +89,52 @@ document.addEventListener('DOMContentLoaded', function () {
     // 2. Setup Tombol Kontrol Peta
     function setupMapControls() {
         // Toggle Satelit / Standard
-        const btnTile = document.getElementById('btnToggleSatellite');
-        let isSatellite = false;
-        if (btnTile) {
-            btnTile.addEventListener('click', function () {
-                if (isSatellite) {
-                    map.removeLayer(baseLayers["Peta Satelit (Esri)"]);
-                    baseLayers["Peta Standar (OSM)"].addTo(map);
-                    this.innerHTML = '<i class="bi bi-layers"></i> Satelit';
-                } else {
+        const btnLayerSat = document.getElementById('btnLayerSatellite');
+        const btnLayerStr = document.getElementById('btnLayerStreet');
+        const btnTileLegacy = document.getElementById('btnToggleSatellite');
+        const statusText = document.getElementById('mapStatusText');
+
+        let currentLayer = 'satellite';
+
+        function switchLayer(layerType) {
+            if (layerType === 'satellite') {
+                if (map.hasLayer(baseLayers["Peta Standar (OSM)"])) {
                     map.removeLayer(baseLayers["Peta Standar (OSM)"]);
-                    baseLayers["Peta Satelit (Esri)"].addTo(map);
-                    this.innerHTML = '<i class="bi bi-map"></i> Peta Standar';
                 }
-                isSatellite = !isSatellite;
+                if (!map.hasLayer(baseLayers["Peta Satelit (Hybrid)"])) {
+                    baseLayers["Peta Satelit (Hybrid)"].addTo(map);
+                }
+                if (btnLayerSat) btnLayerSat.classList.add('active');
+                if (btnLayerStr) btnLayerStr.classList.remove('active');
+                if (statusText) statusText.textContent = 'Mode Citra Satelit Aktif — Kawasan Wisata Pantai Jumiang';
+                currentLayer = 'satellite';
+            } else {
+                if (map.hasLayer(baseLayers["Peta Satelit (Hybrid)"])) {
+                    map.removeLayer(baseLayers["Peta Satelit (Hybrid)"]);
+                }
+                if (!map.hasLayer(baseLayers["Peta Standar (OSM)"])) {
+                    baseLayers["Peta Standar (OSM)"].addTo(map);
+                }
+                if (btnLayerSat) btnLayerSat.classList.remove('active');
+                if (btnLayerStr) btnLayerStr.classList.add('active');
+                if (statusText) statusText.textContent = 'Mode Peta Jalan Standar — Kawasan Wisata Pantai Jumiang';
+                currentLayer = 'street';
+            }
+        }
+
+        if (btnLayerSat) {
+            btnLayerSat.addEventListener('click', function () {
+                switchLayer('satellite');
+            });
+        }
+        if (btnLayerStr) {
+            btnLayerStr.addEventListener('click', function () {
+                switchLayer('street');
+            });
+        }
+        if (btnTileLegacy) {
+            btnTileLegacy.addEventListener('click', function () {
+                switchLayer(currentLayer === 'satellite' ? 'street' : 'satellite');
             });
         }
 

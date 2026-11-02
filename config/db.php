@@ -172,8 +172,8 @@ class Database {
             FOREIGN KEY (id_wisata) REFERENCES wisata(id_wisata) ON DELETE CASCADE
         );");
 
-        // Seed Default Users (Password default: 'admin123')
-        $hashed = password_hash('admin123', PASSWORD_BCRYPT);
+        // Seed Default Users (Password: 'Admin@2024')
+        $hashed = password_hash('Admin@2024', PASSWORD_BCRYPT);
         $pdo->exec("INSERT INTO users (id_user, nama, email, password, role) VALUES 
             (1, 'Administrator JumiangGIS', 'admin@baharigis.id', '$hashed', 'admin'),
             (2, 'Pokdarwis Desa Tanjung', 'operator@baharigis.id', '$hashed', 'operator');");

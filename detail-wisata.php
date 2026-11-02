@@ -214,14 +214,29 @@ document.addEventListener('DOMContentLoaded', function () {
         const lng = <?= (float)$wisata['longitude'] ?>;
         const miniMap = L.map('detailMiniMap', {
             center: [lat, lng],
-            zoom: 12,
+            zoom: 16,
             zoomControl: true,
             scrollWheelZoom: false
         });
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; OpenStreetMap'
+        // Provider Citra Satelit Hybrid
+        const satLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            maxZoom: 20,
+            subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+            attribution: '&copy; Citra Satelit Google'
         }).addTo(miniMap);
+
+        // Provider Peta Jalan Standard
+        const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; OpenStreetMap'
+        });
+
+        // Kontrol Layer
+        L.control.layers({
+            "Satelit": satLayer,
+            "Peta Jalan": osmLayer
+        }, null, { position: 'topright' }).addTo(miniMap);
 
         const pinIcon = L.divIcon({
             className: 'custom-ocean-pin-container',

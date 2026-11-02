@@ -353,12 +353,48 @@ h1, h2, h3, .font-serif {
   align-items: center;
   gap: 6px;
   transition: var(--transition);
+  cursor: pointer;
 }
 
 .map-control-btn:hover {
   background: var(--ocean-50);
   border-color: var(--ocean-400);
   color: var(--ocean-600);
+}
+
+.map-control-btn.active {
+  background: linear-gradient(135deg, var(--ocean-700), var(--ocean-900)) !important;
+  color: #ffffff !important;
+  border-color: var(--ocean-800) !important;
+  box-shadow: 0 4px 14px rgba(15, 76, 129, 0.35) !important;
+}
+
+.map-control-btn.active i {
+  color: #38bdf8 !important;
+}
+
+.map-layer-toggle {
+  display: inline-flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.map-layer-toggle .map-control-btn {
+  border-radius: 0;
+  box-shadow: none;
+  margin: 0;
+}
+
+.map-layer-toggle .map-control-btn:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.map-layer-toggle .map-control-btn:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 /* Map Stats Bottom Left Badge */

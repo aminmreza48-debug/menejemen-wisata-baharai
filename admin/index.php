@@ -216,10 +216,23 @@ document.addEventListener('DOMContentLoaded', function () {
     const mapEl = document.getElementById('adminOverviewMap');
     if (!mapEl) return;
 
-    const map = L.map('adminOverviewMap').setView([-2.5489, 118.0149], 4);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; OpenStreetMap contributors'
+    const map = L.map('adminOverviewMap').setView([-7.2332, 113.5490], 14);
+
+    const satAdmin = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+        maxZoom: 20,
+        subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+        attribution: '&copy; Citra Satelit Google'
     }).addTo(map);
+
+    const osmAdmin = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors',
+        maxZoom: 19
+    });
+
+    L.control.layers({
+        "Satelit": satAdmin,
+        "Peta Jalan": osmAdmin
+    }, null, { position: 'topright' }).addTo(map);
 
     fetch('../api/wisata.php')
         .then(res => res.json())
